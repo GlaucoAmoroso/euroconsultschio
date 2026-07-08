@@ -183,7 +183,7 @@
                             <h3 class="font-serif text-lg text-accent mb-2">Dott. Luigino Sbalchiero</h3>
                             <div class="w-8 h-[1px] bg-white/30 mb-4"></div>
                             <p class="text-xs text-slate-300 font-light leading-relaxed mb-4">
-                                Fondatore dello studio. Specializzato in operazioni societarie straordinarie, pianificazione fiscale e consulenza strategica per PMI e gruppi.
+                                Specializzato in operazioni societarie straordinarie, pianificazione fiscale e consulenza strategica per PMI.
                             </p>
                             <span class="text-[10px] uppercase tracking-widest font-semibold">Commercialista</span>
                         </div>
@@ -221,7 +221,7 @@
                             <h3 class="font-serif text-lg text-accent mb-2">Dott.ssa Maria Lucia Sbalchiero</h3>
                             <div class="w-8 h-[1px] bg-white/30 mb-4"></div>
                             <p class="text-xs text-slate-300 font-light leading-relaxed mb-4">
-                                Forte competenza nell'assistenza ad enti del terzo settore (No Profit), consulenza societaria ordinaria e dichiarazioni dei redditi complesse.
+                                Punto di riferimento nella gestione societaria ordinaria. Massima esperienza nella risoluzione puntuale delle tematiche fiscali più articolate.
                             </p>
                             <span class="text-[10px] uppercase tracking-widest font-semibold">Commercialista</span>
                         </div>
@@ -240,7 +240,7 @@
                             <h3 class="font-serif text-lg text-accent mb-2">Dott.ssa Carla De Stefani</h3>
                             <div class="w-8 h-[1px] bg-white/30 mb-4"></div>
                             <p class="text-xs text-slate-300 font-light leading-relaxed mb-4">
-                                Consulente con profonda esperienza nelle procedure concorsuali, gestione della crisi d'impresa e accordi stragiudiziali.
+                                Consulente fiscale dotata di comprovata esperienza in attività di supporto e assistenza ad imprese e professionisti.
                             </p>
                             <span class="text-[10px] uppercase tracking-widest font-semibold">Commercialista</span>
                         </div>
@@ -361,7 +361,7 @@
                         Abbiamo pensato ad un ambiente riservato e professionale, strutturato per accoglierti e affrontare con la massima privacy ogni tematica societaria, fiscale e finanziaria.
                     </p>
                     <div class="pt-4">
-                        <a href="https://www.google.com/maps/search/Dr.ssa+Carla+De+Stefani+%7C+Studio+di+Consulenza+d'impresa,+Schio" target="_blank" rel="noopener" class="inline-flex items-center text-sm tracking-widest font-medium uppercase text-accent hover:text-primary transition-colors group">
+                        <a href="https://www.google.com/maps/search/Euroconsult+srl,+Schio" target="_blank" rel="noopener" class="inline-flex items-center text-sm tracking-widest font-medium uppercase text-accent hover:text-primary transition-colors group">
                             <span>Apri in Google Maps</span>
                             <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>
@@ -434,7 +434,7 @@
                     </div>
                 </div>
 
-                <!-- Modulo di Richiesta (Ombreggiato e con bordi stondati) -->
+                <!-- Modulo di Richiesta -->
                 <div class="lg:col-span-7">
                     <div class="bg-white p-8 border border-slate-100 rounded-2xl shadow-xl">
                         <form action="https://api.web3forms.com/submit" method="POST" id="booking-form" class="space-y-6">
@@ -616,13 +616,13 @@
         document.getElementById('footer-privacy-btn').addEventListener('click', togglePrivacyModal);
         document.getElementById('close-privacy').addEventListener('click', togglePrivacyModal);
 
-        // Cookie & Mappe
+        // Cookie & Mappe (Modificato con Query Corretta per Euroconsult srl)
         const banner = document.getElementById('cookie-banner');
         
         function loadInteractiveMap() {
             const mapContainer = document.getElementById('map-container');
             mapContainer.classList.remove('p-6', 'bg-white', 'border', 'border-slate-100');
-            mapContainer.innerHTML = `<iframe src="https://maps.google.com/maps?q=Dr.ssa%20Carla%20De%20Stefani%20%7C%20Studio%20di%20Consulenza%20d'impresa,%20Schio&t=&z=15&ie=UTF8&iwloc=&output=embed" class="w-full h-full border-0 rounded-2xl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+            mapContainer.innerHTML = `<iframe src="https://maps.google.com/maps?q=Euroconsult%20srl,%20Schio&t=&z=15&ie=UTF8&iwloc=&output=embed" class="w-full h-full border-0 rounded-2xl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
         }
 
         function checkCookieConsent() {
@@ -655,6 +655,25 @@
         });
 
         window.addEventListener('DOMContentLoaded', checkCookieConsent);
+
+        // Gestione Flip Card (Mobile) - Ritorno al fronte allo scroll o tap esterno
+        const flipCards = document.querySelectorAll('.perspective-1000');
+        
+        // Rimuove il focus (e quindi chiude la card) durante lo scroll
+        window.addEventListener('scroll', () => {
+            if (document.activeElement && document.activeElement.closest('.perspective-1000')) {
+                document.activeElement.blur();
+            }
+        }, { passive: true });
+
+        // Rimuove il focus se si clicca/tocca fuori dalle card
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.perspective-1000')) {
+                if (document.activeElement && document.activeElement.closest('.perspective-1000')) {
+                    document.activeElement.blur();
+                }
+            }
+        });
     </script>
 </body>
 </html>
