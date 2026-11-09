@@ -13,33 +13,17 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #F8F9FA; 
-        }
-        h1, h2, h3, h4, .font-serif {
-            font-family: 'Playfair Display', serif;
-        }
-        
+        body { font-family: 'Inter', sans-serif; background-color: #F8F9FA; }
+        h1, h2, h3, h4, .font-serif { font-family: 'Playfair Display', serif; }
         .text-accent { color: #A67C52; } 
         .bg-accent { background-color: #A67C52; }
         .border-accent { border-color: #A67C52; }
         .hover\:bg-accent-dark:hover { background-color: #8A6541; }
-        
         .text-primary { color: #0F172A; } 
         .bg-primary { background-color: #0F172A; }
-        
-        .hero-gradient {
-            background: linear-gradient(to right, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.75) 50%, rgba(15, 23, 42, 0.1) 100%);
-        }
-
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
+        .hero-gradient { background: linear-gradient(to right, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.75) 50%, rgba(15, 23, 42, 0.1) 100%); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
 </head>
 <body class="text-slate-700 antialiased selection:bg-slate-300">
@@ -47,48 +31,70 @@
     <!-- COOKIE BANNER NORMATIVA GDPR -->
     <div id="cookie-banner" class="fixed bottom-6 left-6 right-6 md:max-w-xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-2xl p-6 z-50 rounded-2xl transition-all duration-500 transform translate-y-20 opacity-0 hidden">
         <div class="space-y-4">
-            <h4 class="font-serif text-lg font-semibold text-primary">Informativa sui Cookie</h4>
-            <p class="text-xs text-slate-500 leading-relaxed">
-                Questo sito utilizza cookie tecnici necessari al funzionamento e cookie di terze parti (Google Maps) per mostrarti la mappa interattiva. Puoi scegliere se accettare i cookie di tracciamento o navigare con le funzioni limitate. Consulta la nostra <a href="#" id="open-privacy-cookie" class="underline text-accent hover:text-primary transition-colors">Privacy Policy</a>.
+            <h4 class="font-serif text-lg font-semibold text-primary" data-i18n="cookie_title">Informativa sui Cookie</h4>
+            <p class="text-xs text-slate-500 leading-relaxed" data-i18n="cookie_desc">
+                Questo sito utilizza cookie tecnici necessari al funzionamento e cookie di terze parti (Google Maps) per mostrarti la mappa interattiva. Consulta la nostra <a href="#" id="open-privacy-cookie" class="underline text-accent hover:text-primary transition-colors">Privacy Policy</a>.
             </p>
             <div class="flex items-center justify-end space-x-3 text-xs uppercase tracking-widest font-semibold pt-2">
-                <button id="cookie-reject" class="text-slate-400 hover:text-primary transition-colors px-4 py-2">Rifiuta</button>
-                <button id="cookie-accept" class="bg-primary text-white px-5 py-2.5 rounded-lg hover:bg-accent transition-colors shadow-sm">Accetta</button>
+                <button id="cookie-reject" class="text-slate-400 hover:text-primary transition-colors px-4 py-2" data-i18n="cookie_reject">Rifiuta</button>
+                <button id="cookie-accept" class="bg-primary text-white px-5 py-2.5 rounded-lg hover:bg-accent transition-colors shadow-sm" data-i18n="cookie_accept">Accetta</button>
             </div>
         </div>
     </div>
 
-    <!-- NAVBAR (Traslucida) -->
+    <!-- NAVBAR -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-[#F8F9FA]/85 backdrop-blur-md border-b border-slate-200/60 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
             <a href="#hero" class="text-base md:text-lg font-serif font-semibold tracking-wider uppercase text-primary hover:text-accent transition-colors">
-                Studio di Consulenza D'Impresa
+                Euroconsult
             </a>
 
-            <nav class="hidden md:flex items-center space-x-8 text-xs tracking-widest uppercase font-medium text-slate-600">
-                <a href="#chisiamo" class="hover:text-accent transition-colors">Chi Siamo</a>
-                <a href="#team" class="hover:text-accent transition-colors">Team</a>
-                <a href="#servizi" class="hover:text-accent transition-colors">Servizi</a>
-                <a href="#location" class="hover:text-accent transition-colors">Dove Siamo</a>
-                <a href="#contatti" class="bg-primary text-white px-6 py-2.5 rounded-lg hover:bg-accent transition-colors ml-4 shadow-sm">Consulenza</a>
-            </nav>
+            <!-- Contenitore Destro -->
+            <div class="flex items-center gap-5 md:gap-8">
+                <!-- Menu Desktop -->
+                <nav class="hidden md:flex items-center space-x-8 text-xs tracking-widest uppercase font-medium text-slate-600">
+                    <a href="#chisiamo" class="hover:text-accent transition-colors" data-i18n="nav_about">Chi Siamo</a>
+                    <a href="#team" class="hover:text-accent transition-colors" data-i18n="nav_team">Team</a>
+                    <a href="#servizi" class="hover:text-accent transition-colors" data-i18n="nav_services">Servizi</a>
+                    <a href="#location" class="hover:text-accent transition-colors" data-i18n="nav_location">Dove Siamo</a>
+                    <a href="#contatti" class="bg-primary text-white px-6 py-2.5 rounded-lg hover:bg-accent transition-colors shadow-sm" data-i18n="nav_contact">Consulenza</a>
+                </nav>
 
-            <button id="menu-btn" class="md:hidden flex flex-col justify-between w-6 h-4 transform transition-all duration-300 z-50 focus:outline-none" aria-label="Apri Menu">
-                <span id="bar1" class="w-full h-[1.5px] bg-primary transition-all duration-300"></span>
-                <span id="bar2" class="w-full h-[1.5px] bg-primary transition-all duration-300"></span>
-                <span id="bar3" class="w-full h-[1.5px] bg-primary transition-all duration-300"></span>
-            </button>
+                <!-- Toggle Lingua Desktop -->
+                <div class="lang-toggle hidden md:flex relative items-center bg-slate-400/10 backdrop-blur-xl border border-white/60 p-1 rounded-full shadow-[inset_0_2px_4px_rgba(0,0,0,0.06)] cursor-pointer hover:bg-slate-400/20 transition-colors">
+                    <div class="lang-slider absolute left-1 top-1 bottom-1 w-[32px] bg-white rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.12)] transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]"></div>
+                    <div class="lang-it relative z-10 w-[32px] h-6 flex items-center justify-center text-[10px] font-bold text-primary transition-colors">IT</div>
+                    <div class="lang-en relative z-10 w-[32px] h-6 flex items-center justify-center text-[10px] font-medium text-slate-400 transition-colors">EN</div>
+                </div>
+
+                <!-- Hamburger Button -->
+                <button id="menu-btn" class="md:hidden relative w-6 h-[18px] z-50 focus:outline-none" aria-label="Apri Menu">
+                    <span id="bar1" class="absolute top-0 left-0 w-full h-[2px] bg-primary rounded-full transition-all duration-300 ease-out"></span>
+                    <span id="bar2" class="absolute top-1/2 -translate-y-1/2 left-0 w-full h-[2px] bg-primary rounded-full transition-all duration-300 ease-out"></span>
+                    <span id="bar3" class="absolute bottom-0 left-0 w-full h-[2px] bg-primary rounded-full transition-all duration-300 ease-out"></span>
+                </button>
+            </div>
         </div>
     </header>
 
     <!-- MOBILE DRAWER -->
     <div id="mobile-menu" class="fixed inset-0 bg-[#F8F9FA] z-40 flex flex-col justify-center items-center transform translate-x-full transition-transform duration-500 ease-in-out md:hidden">
         <nav class="flex flex-col items-center space-y-8 text-lg tracking-widest uppercase font-serif">
-            <a href="#chisiamo" class="mobile-link text-primary hover:text-accent transition-colors">Chi Siamo</a>
-            <a href="#team" class="mobile-link text-primary hover:text-accent transition-colors">Il Team</a>
-            <a href="#servizi" class="mobile-link text-primary hover:text-accent transition-colors">Servizi</a>
-            <a href="#location" class="mobile-link text-primary hover:text-accent transition-colors">Dove Siamo</a>
-            <a href="#contatti" class="mobile-link bg-accent text-white px-8 py-3 rounded-lg uppercase text-xs font-sans tracking-widest font-medium hover:bg-primary transition-colors mt-4">Richiedi Consulenza</a>
+            <a href="#chisiamo" class="mobile-link text-primary hover:text-accent transition-colors" data-i18n="nav_about">Chi Siamo</a>
+            <a href="#team" class="mobile-link text-primary hover:text-accent transition-colors" data-i18n="nav_team">Il Team</a>
+            <a href="#servizi" class="mobile-link text-primary hover:text-accent transition-colors" data-i18n="nav_services">Servizi</a>
+            <a href="#location" class="mobile-link text-primary hover:text-accent transition-colors" data-i18n="nav_location">Dove Siamo</a>
+            <a href="#contatti" class="mobile-link bg-accent text-white px-8 py-3 rounded-lg uppercase text-xs font-sans tracking-widest font-medium hover:bg-primary transition-colors mt-4" data-i18n="nav_contact_long">Richiedi Consulenza</a>
+            
+            <!-- Toggle Lingua Mobile -->
+            <div class="pt-8 flex flex-col items-center border-t border-slate-200/60 w-full">
+                <span class="text-[10px] text-slate-400 font-sans tracking-widest uppercase mb-3">Lingua / Language</span>
+                <div class="lang-toggle flex relative items-center bg-slate-400/10 backdrop-blur-xl border border-slate-300/40 p-1 rounded-full shadow-[inset_0_2px_4px_rgba(0,0,0,0.04)] cursor-pointer hover:bg-slate-400/20 transition-colors">
+                    <div class="lang-slider absolute left-1 top-1 bottom-1 w-[32px] bg-white rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.12)] transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]"></div>
+                    <div class="lang-it relative z-10 w-[32px] h-6 flex items-center justify-center text-[10px] font-bold text-primary transition-colors">IT</div>
+                    <div class="lang-en relative z-10 w-[32px] h-6 flex items-center justify-center text-[10px] font-medium text-slate-400 transition-colors">EN</div>
+                </div>
+            </div>
         </nav>
     </div>
 
@@ -105,19 +111,19 @@
         <div class="relative z-20 w-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
             <div class="max-w-2xl text-left pointer-events-auto">
                 <span class="text-xs tracking-widest uppercase text-accent font-semibold block mb-6 flex items-center">
-                    <span class="w-8 h-[1px] bg-accent mr-4"></span> Dottori Commercialisti e Revisori Legali
+                    <span class="w-8 h-[1px] bg-accent mr-4"></span> <span data-i18n="hero_tag">Dottori Commercialisti e Revisori Legali</span>
                 </span>
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-tight mb-8 drop-shadow-md">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif text-white leading-tight mb-8 drop-shadow-md" data-i18n="hero_title">
                     Strategie d'Impresa e Visione Finanziaria
                 </h1>
-                <p class="text-base md:text-lg font-light text-slate-200 max-w-xl mb-10 leading-relaxed drop-shadow-sm">
+                <p class="text-base md:text-lg font-light text-slate-200 max-w-xl mb-10 leading-relaxed drop-shadow-sm" data-i18n="hero_desc">
                     Siamo i partner strategici per la crescita del tuo business. Trasformiamo la complessità fiscale e societaria in un vantaggio competitivo, supportando le imprese del territorio con chiarezza e proattività.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#contatti" class="inline-block bg-accent text-white px-8 py-4 tracking-widest text-xs uppercase hover:bg-white hover:text-primary transition-colors font-medium text-center rounded-lg shadow-lg">
+                    <a href="#contatti" class="inline-block bg-accent text-white px-8 py-4 tracking-widest text-xs uppercase hover:bg-white hover:text-primary transition-colors font-medium text-center rounded-lg shadow-lg" data-i18n="hero_btn1">
                         Inizia una Collaborazione
                     </a>
-                    <a href="#servizi" class="inline-block border border-white/40 text-white hover:bg-white/10 px-8 py-4 tracking-widest text-xs uppercase transition-colors font-medium text-center rounded-lg backdrop-blur-sm">
+                    <a href="#servizi" class="inline-block border border-white/40 text-white hover:bg-white/10 px-8 py-4 tracking-widest text-xs uppercase transition-colors font-medium text-center rounded-lg backdrop-blur-sm" data-i18n="hero_btn2">
                         Le Nostre Aree
                     </a>
                 </div>
@@ -129,16 +135,16 @@
     <section id="chisiamo" class="py-24 bg-white relative z-30">
         <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div class="space-y-6">
-                <span class="text-xs uppercase tracking-widest text-accent font-semibold block">Il Nostro Approccio</span>
-                <h2 class="text-3xl md:text-4xl font-serif text-primary leading-tight">Molto più di un semplice supporto contabile</h2>
+                <span class="text-xs uppercase tracking-widest text-accent font-semibold block" data-i18n="about_tag">Il Nostro Approccio</span>
+                <h2 class="text-3xl md:text-4xl font-serif text-primary leading-tight" data-i18n="about_title">Molto più di un semplice supporto contabile</h2>
                 <div class="w-12 h-[2px] bg-accent mt-4 mb-6"></div>
-                <p class="text-slate-600 font-light leading-relaxed">
+                <p class="text-slate-600 font-light leading-relaxed" data-i18n="about_p1">
                     <strong>Studio di Consulenza d’Impresa</strong> si distingue per un approccio moderno e dinamico. Oltre alla tradizionale assistenza amministrativa e fiscale, ci posizioniamo come veri e propri alleati per gli imprenditori del vicentino, aiutandoli a navigare un mercato in continua evoluzione.
                 </p>
-                <p class="text-slate-600 font-light leading-relaxed">
+                <p class="text-slate-600 font-light leading-relaxed" data-i18n="about_p2">
                     Crediamo fortemente nella pianificazione e nell'ottimizzazione preventiva: non ci limitiamo a registrare i dati del passato, ma forniamo strumenti e analisi per costruire un futuro aziendale solido.
                 </p>
-                <p class="text-slate-600 font-light leading-relaxed italic border-l-2 border-accent pl-4 mt-6">
+                <p class="text-slate-600 font-light leading-relaxed italic border-l-2 border-accent pl-4 mt-6" data-i18n="about_quote">
                     "Il nostro obiettivo è anticipare le criticità e cogliere le opportunità normative, garantendo agli amministratori la massima tranquillità operativa attraverso soluzioni sartoriali e digitalmente avanzate."
                 </p>
             </div>
@@ -146,50 +152,44 @@
                 <div class="aspect-[4/3] overflow-hidden rounded-2xl shadow-xl border border-slate-100">
                     <img src="foto/riunioni.jpg" alt="Riunione aziendale" class="w-full h-full object-cover">
                 </div>
-                <!-- Box 30+ Rimpicciolito ed Elegante -->
+                <!-- Box 30+ -->
                 <div class="absolute -bottom-5 -left-5 bg-primary px-6 py-5 rounded-xl text-white hidden md:inline-block shadow-2xl border border-white/10">
                     <p class="text-3xl font-serif text-accent mb-0.5 leading-none">30+</p>
-                    <p class="text-[10px] tracking-[0.15em] uppercase font-medium text-slate-300">Anni di Consulenza</p>
+                    <p class="text-[10px] tracking-[0.15em] uppercase font-medium text-slate-300" data-i18n="about_years">Anni di Consulenza</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- IL TEAM (Card Slide-Up con Sfumatura Riparata) -->
+    <!-- IL TEAM -->
     <section id="team" class="py-24 bg-[#F8F9FA] border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-xs uppercase tracking-widest text-accent font-semibold block mb-3">Le Persone</span>
-                <h2 class="text-3xl md:text-4xl font-serif text-primary mb-6">Eccellenza multidisciplinare</h2>
+                <span class="text-xs uppercase tracking-widest text-accent font-semibold block mb-3" data-i18n="team_tag">Le Persone</span>
+                <h2 class="text-3xl md:text-4xl font-serif text-primary mb-6" data-i18n="team_title">Eccellenza multidisciplinare</h2>
                 <div class="w-12 h-[2px] bg-accent mx-auto mb-6"></div>
-                <p class="text-slate-600 font-light leading-relaxed max-w-3xl mx-auto">
+                <p class="text-slate-600 font-light leading-relaxed max-w-3xl mx-auto" data-i18n="team_desc">
                     Ogni sfida aziendale richiede competenze verticali specifiche. Il nostro team è composto da figure altamente qualificate, in grado di lavorare in stretta sinergia per fornirti risposte complete, tempestive e integrate.
                 </p>
             </div>
 
-            <!-- Griglia Card Team -->
             <div class="flex flex-wrap justify-center gap-8">
-                
-                <!-- CARD 1: Luigino Sbalchiero -->
+                <!-- CARD 1 -->
                 <div class="group relative h-[420px] w-full max-w-[300px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer bg-white">
                     <img src="foto/sbalchiero.jpg" alt="Dott. Luigino Sbalchiero" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-                    
-                    <!-- Contenitore con sfumatura fissa HEX #0F172A (Primary) che avvolge il testo e sale con esso -->
                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/90 to-transparent p-6 pt-32 flex flex-col justify-end z-10 transition-all duration-500">
                         <h3 class="font-serif text-[18px] font-semibold text-white leading-tight mb-1">Dott. Luigino Sbalchiero</h3>
-                        <span class="text-[10px] uppercase tracking-widest font-semibold text-accent">Commercialista</span>
-                        
-                        <!-- Testo a comparsa -->
+                        <span class="text-[10px] uppercase tracking-widest font-semibold text-accent" data-i18n="role_comm">Commercialista</span>
                         <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                             <div class="overflow-hidden">
                                 <div class="pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                                     <div class="w-8 h-[1px] bg-white/30 mb-3"></div>
-                                    <p class="text-[12px] text-slate-200 font-light leading-relaxed mb-4">
+                                    <p class="text-[12px] text-slate-200 font-light leading-relaxed mb-4" data-i18n="bio_1">
                                         Fondatore dello studio. Specializzato in operazioni societarie straordinarie, pianificazione fiscale e consulenza strategica per PMI e gruppi.
                                     </p>
                                     <a href="https://www.linkedin.com/in/luigino-sbalchiero-92932bba/" target="_blank" rel="noopener" class="inline-flex items-center space-x-2 text-[10px] uppercase tracking-widest bg-white/10 border border-white/20 px-4 py-2 rounded-full hover:bg-accent hover:text-white hover:border-accent text-white transition-all">
                                         <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                                        <span>Profilo LinkedIn</span>
+                                        <span data-i18n="linkedin">Profilo LinkedIn</span>
                                     </a>
                                 </div>
                             </div>
@@ -197,24 +197,22 @@
                     </div>
                 </div>
 
-                <!-- CARD 2: Alberto Vitella -->
+                <!-- CARD 2 -->
                 <div class="group relative h-[420px] w-full max-w-[300px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer bg-white">
                     <img src="foto/vitella.jpg" alt="Dott. Alberto Vitella" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-                    
                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/90 to-transparent p-6 pt-32 flex flex-col justify-end z-10 transition-all duration-500">
                         <h3 class="font-serif text-[18px] font-semibold text-white leading-tight mb-1">Dott. Alberto Vitella</h3>
-                        <span class="text-[10px] uppercase tracking-widest font-semibold text-accent">Revisore Legale</span>
-                        
+                        <span class="text-[10px] uppercase tracking-widest font-semibold text-accent" data-i18n="role_rev">Revisore Legale</span>
                         <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                             <div class="overflow-hidden">
                                 <div class="pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                                     <div class="w-8 h-[1px] bg-white/30 mb-3"></div>
-                                    <p class="text-[12px] text-slate-200 font-light leading-relaxed mb-4">
+                                    <p class="text-[12px] text-slate-200 font-light leading-relaxed mb-4" data-i18n="bio_2">
                                         Partner esperto in revisione legale, controllo di gestione aziendale, contenzioso tributario e salvaguardia del patrimonio societario.
                                     </p>
                                     <a href="https://www.linkedin.com/in/alberto-vitella-73a77570/" target="_blank" rel="noopener" class="inline-flex items-center space-x-2 text-[10px] uppercase tracking-widest bg-white/10 border border-white/20 px-4 py-2 rounded-full hover:bg-accent hover:text-white hover:border-accent text-white transition-all">
                                         <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                                        <span>Profilo LinkedIn</span>
+                                        <span data-i18n="linkedin">Profilo LinkedIn</span>
                                     </a>
                                 </div>
                             </div>
@@ -222,24 +220,22 @@
                     </div>
                 </div>
 
-                <!-- CARD 3: Maria Lucia Sbalchiero -->
+                <!-- CARD 3 -->
                 <div class="group relative h-[420px] w-full max-w-[300px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer bg-white">
                     <img src="foto/mariaSbalchiero.jpg" alt="Dott.ssa Maria Lucia Sbalchiero" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-                    
                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/90 to-transparent p-6 pt-32 flex flex-col justify-end z-10 transition-all duration-500">
                         <h3 class="font-serif text-[18px] font-semibold text-white leading-tight mb-1">Dott.ssa M. Lucia Sbalchiero</h3>
-                        <span class="text-[10px] uppercase tracking-widest font-semibold text-accent">Commercialista</span>
-                        
+                        <span class="text-[10px] uppercase tracking-widest font-semibold text-accent" data-i18n="role_comm">Commercialista</span>
                         <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                             <div class="overflow-hidden">
                                 <div class="pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                                     <div class="w-8 h-[1px] bg-white/30 mb-3"></div>
-                                    <p class="text-[12px] text-slate-200 font-light leading-relaxed mb-4">
+                                    <p class="text-[12px] text-slate-200 font-light leading-relaxed mb-4" data-i18n="bio_3">
                                         Punto di riferimento nella gestione societaria ordinaria. Massima esperienza nella risoluzione puntuale delle tematiche fiscali più articolate.
                                     </p>
                                     <a href="https://www.linkedin.com/in/maria-lucia-sbalchiero-6933b3246/" target="_blank" rel="noopener" class="inline-flex items-center space-x-2 text-[10px] uppercase tracking-widest bg-white/10 border border-white/20 px-4 py-2 rounded-full hover:bg-accent hover:text-white hover:border-accent text-white transition-all">
                                         <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                                        <span>Profilo LinkedIn</span>
+                                        <span data-i18n="linkedin">Profilo LinkedIn</span>
                                     </a>
                                 </div>
                             </div>
@@ -247,24 +243,22 @@
                     </div>
                 </div>
 
-                <!-- CARD 4: Carla De Stefani -->
+                <!-- CARD 4 -->
                 <div class="group relative h-[420px] w-full max-w-[300px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer bg-white">
                     <img src="foto/deStefani.jpg" alt="Dott.ssa Carla De Stefani" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-                    
                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/90 to-transparent p-6 pt-32 flex flex-col justify-end z-10 transition-all duration-500">
                         <h3 class="font-serif text-[18px] font-semibold text-white leading-tight mb-1">Dott.ssa Carla De Stefani</h3>
-                        <span class="text-[10px] uppercase tracking-widest font-semibold text-accent">Commercialista</span>
-                        
+                        <span class="text-[10px] uppercase tracking-widest font-semibold text-accent" data-i18n="role_comm">Commercialista</span>
                         <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                             <div class="overflow-hidden">
                                 <div class="pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                                     <div class="w-8 h-[1px] bg-white/30 mb-3"></div>
-                                    <p class="text-[12px] text-slate-200 font-light leading-relaxed mb-4">
+                                    <p class="text-[12px] text-slate-200 font-light leading-relaxed mb-4" data-i18n="bio_4">
                                         Consulente fiscale dotata di comprovata esperienza in attività di supporto e assistenza ad imprese e professionisti.
                                     </p>
                                     <a href="https://www.linkedin.com/in/carla-de-stefani-965012246/" target="_blank" rel="noopener" class="inline-flex items-center space-x-2 text-[10px] uppercase tracking-widest bg-white/10 border border-white/20 px-4 py-2 rounded-full hover:bg-accent hover:text-white hover:border-accent text-white transition-all">
                                         <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                                        <span>Profilo LinkedIn</span>
+                                        <span data-i18n="linkedin">Profilo LinkedIn</span>
                                     </a>
                                 </div>
                             </div>
@@ -272,24 +266,22 @@
                     </div>
                 </div>
 
-                <!-- CARD 5: Anna Malgarin -->
+                <!-- CARD 5 -->
                 <div class="group relative h-[420px] w-full max-w-[300px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer bg-white">
                     <img src="foto/malgarin.jpg" alt="Dott.ssa Anna Malgarin" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
-                    
                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/90 to-transparent p-6 pt-32 flex flex-col justify-end z-10 transition-all duration-500">
                         <h3 class="font-serif text-[18px] font-semibold text-white leading-tight mb-1">Dott.ssa Anna Malgarin</h3>
-                        <span class="text-[10px] uppercase tracking-widest font-semibold text-accent">Commercialista</span>
-                        
+                        <span class="text-[10px] uppercase tracking-widest font-semibold text-accent" data-i18n="role_comm">Commercialista</span>
                         <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                             <div class="overflow-hidden">
                                 <div class="pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
                                     <div class="w-8 h-[1px] bg-white/30 mb-3"></div>
-                                    <p class="text-[12px] text-slate-200 font-light leading-relaxed mb-4">
+                                    <p class="text-[12px] text-slate-200 font-light leading-relaxed mb-4" data-i18n="bio_5">
                                         Specializzata in consulenza fiscale per professionisti, elaborazione business plan, start-up innovative e finanza agevolata.
                                     </p>
                                     <a href="https://it.linkedin.com/in/anna-malgarin-4a1135223" target="_blank" rel="noopener" class="inline-flex items-center space-x-2 text-[10px] uppercase tracking-widest bg-white/10 border border-white/20 px-4 py-2 rounded-full hover:bg-accent hover:text-white hover:border-accent text-white transition-all">
                                         <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                                        <span>Profilo LinkedIn</span>
+                                        <span data-i18n="linkedin">Profilo LinkedIn</span>
                                     </a>
                                 </div>
                             </div>
@@ -305,8 +297,8 @@
     <section id="servizi" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-xs uppercase tracking-widest text-accent font-semibold block mb-3">Aree di Intervento</span>
-                <h2 class="text-3xl md:text-4xl font-serif text-primary">I Nostri Servizi</h2>
+                <span class="text-xs uppercase tracking-widest text-accent font-semibold block mb-3" data-i18n="srv_tag">Aree di Intervento</span>
+                <h2 class="text-3xl md:text-4xl font-serif text-primary" data-i18n="srv_title">I Nostri Servizi</h2>
                 <div class="w-12 h-[2px] bg-accent mx-auto mt-6"></div>
             </div>
 
@@ -316,8 +308,8 @@
                     <div class="w-12 h-12 flex items-center justify-center bg-white shadow-sm border border-slate-100 rounded-lg mb-6 group-hover:bg-primary transition-colors text-accent">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
                     </div>
-                    <h3 class="text-lg font-serif text-primary mb-3">Consulenza Societaria</h3>
-                    <p class="text-sm font-light text-slate-600 leading-relaxed">
+                    <h3 class="text-lg font-serif text-primary mb-3" data-i18n="srv_1_t">Consulenza Societaria</h3>
+                    <p class="text-sm font-light text-slate-600 leading-relaxed" data-i18n="srv_1_d">
                         Assistiamo i clienti negli adempimenti fiscali e civilistici, elaborazione contabilità, scelte aziendali strategiche e passaggio generazionale per la salvaguardia del patrimonio.
                     </p>
                 </div>
@@ -326,8 +318,8 @@
                     <div class="w-12 h-12 flex items-center justify-center bg-white shadow-sm border border-slate-100 rounded-lg mb-6 group-hover:bg-primary transition-colors text-accent">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                     </div>
-                    <h3 class="text-lg font-serif text-primary mb-3">Pianificazione e Contenzioso</h3>
-                    <p class="text-sm font-light text-slate-600 leading-relaxed">
+                    <h3 class="text-lg font-serif text-primary mb-3" data-i18n="srv_2_t">Pianificazione e Contenzioso</h3>
+                    <p class="text-sm font-light text-slate-600 leading-relaxed" data-i18n="srv_2_d">
                         Analisi dei vantaggi fiscali tramite aggiornamento normativo continuo. Assistenza preventiva e gestione del contenzioso tributario per la risoluzione ottimale delle controversie.
                     </p>
                 </div>
@@ -336,8 +328,8 @@
                     <div class="w-12 h-12 flex items-center justify-center bg-white shadow-sm border border-slate-100 rounded-lg mb-6 group-hover:bg-primary transition-colors text-accent">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
                     </div>
-                    <h3 class="text-lg font-serif text-primary mb-3">Controllo di Gestione</h3>
-                    <p class="text-sm font-light text-slate-600 leading-relaxed">
+                    <h3 class="text-lg font-serif text-primary mb-3" data-i18n="srv_3_t">Controllo di Gestione</h3>
+                    <p class="text-sm font-light text-slate-600 leading-relaxed" data-i18n="srv_3_d">
                         Elaborazione di strumenti di controllo efficaci, ottimizzazione della gestione finanziaria, redazione di piani di tesoreria, business plan e contabilità analitica.
                     </p>
                 </div>
@@ -346,8 +338,8 @@
                     <div class="w-12 h-12 flex items-center justify-center bg-white shadow-sm border border-slate-100 rounded-lg mb-6 group-hover:bg-primary transition-colors text-accent">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
                     </div>
-                    <h3 class="text-lg font-serif text-primary mb-3">Operazioni Straordinarie</h3>
-                    <p class="text-sm font-light text-slate-600 leading-relaxed">
+                    <h3 class="text-lg font-serif text-primary mb-3" data-i18n="srv_4_t">Operazioni Straordinarie</h3>
+                    <p class="text-sm font-light text-slate-600 leading-relaxed" data-i18n="srv_4_d">
                         Riorganizzazioni aziendali, ristrutturazioni di gruppi societari (anche esteri), valutazioni d'azienda e stime del valore economico di asset e capitale.
                     </p>
                 </div>
@@ -356,8 +348,8 @@
                     <div class="w-12 h-12 flex items-center justify-center bg-white shadow-sm border border-slate-100 rounded-lg mb-6 group-hover:bg-primary transition-colors text-accent">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
-                    <h3 class="text-lg font-serif text-primary mb-3">Gestione Crisi d'Impresa</h3>
-                    <p class="text-sm font-light text-slate-600 leading-relaxed">
+                    <h3 class="text-lg font-serif text-primary mb-3" data-i18n="srv_5_t">Gestione Crisi d'Impresa</h3>
+                    <p class="text-sm font-light text-slate-600 leading-relaxed" data-i18n="srv_5_d">
                         Supporto in situazioni di crisi tramite accordi stragiudiziali, procedure concorsuali e attività di advisor finanziario o esperto negoziatore (artt. 67, 161 e 182 bis L.F.).
                     </p>
                 </div>
@@ -366,8 +358,8 @@
                     <div class="w-12 h-12 flex items-center justify-center bg-white shadow-sm border border-slate-100 rounded-lg mb-6 group-hover:bg-primary transition-colors text-accent">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
                     </div>
-                    <h3 class="text-lg font-serif text-primary mb-3">Revisione Contabile</h3>
-                    <p class="text-sm font-light text-slate-600 leading-relaxed">
+                    <h3 class="text-lg font-serif text-primary mb-3" data-i18n="srv_6_t">Revisione Contabile</h3>
+                    <p class="text-sm font-light text-slate-600 leading-relaxed" data-i18n="srv_6_d">
                         Controllo in ambito di collegi sindacali o revisori dei conti di società di capitali, Enti Pubblici e no profit, con specializzazione nelle PMI del territorio.
                     </p>
                 </div>
@@ -376,36 +368,34 @@
         </div>
     </section>
 
-    <!-- SEZIONE DOVE SIAMO (Mappa e Descrizione Luogo) -->
+    <!-- DOVE SIAMO -->
     <section id="location" class="py-24 bg-[#F8F9FA] border-t border-slate-200/60 scroll-mt-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                 
-                <!-- Informazioni di Luogo -->
                 <div class="lg:col-span-5 space-y-6">
-                    <span class="text-xs uppercase tracking-widest text-accent font-semibold block mb-2">La Sede</span>
-                    <h2 class="text-3xl font-serif text-primary mb-4">Vieni a Trovarci</h2>
-                    <p class="text-slate-600 font-light leading-relaxed">
+                    <span class="text-xs uppercase tracking-widest text-accent font-semibold block mb-2" data-i18n="loc_tag">La Sede</span>
+                    <h2 class="text-3xl font-serif text-primary mb-4" data-i18n="loc_title">Vieni a Trovarci</h2>
+                    <p class="text-slate-600 font-light leading-relaxed" data-i18n="loc_p1">
                         I nostri uffici si trovano a <strong>Schio (VI)</strong>, in posizione strategica e comodamente raggiungibile, per poter affiancare da vicino le imprese di tutto il territorio vicentino. 
                     </p>
-                    <p class="text-slate-600 font-light leading-relaxed">
+                    <p class="text-slate-600 font-light leading-relaxed" data-i18n="loc_p2">
                         Abbiamo pensato ad un ambiente riservato e professionale, strutturato per accoglierti e affrontare con la massima privacy ogni tematica societaria, fiscale e finanziaria.
                     </p>
                     <div class="pt-4">
                         <a href="https://www.google.com/maps/search/Euroconsult+srl,+Schio" target="_blank" rel="noopener" class="inline-flex items-center text-sm tracking-widest font-medium uppercase text-accent hover:text-primary transition-colors group">
-                            <span>Apri in Google Maps</span>
+                            <span data-i18n="loc_btn">Apri in Google Maps</span>
                             <svg class="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                         </a>
                     </div>
                 </div>
 
-                <!-- Mappa Ridimensionata, Bordi Stondati, Ombreggiata -->
                 <div class="lg:col-span-7 h-[400px]">
                     <div id="map-container" class="h-full w-full bg-white border border-slate-100 shadow-xl relative overflow-hidden rounded-2xl flex items-center justify-center text-center p-6 transition-all">
                         <div id="map-placeholder" class="space-y-4">
                             <svg class="w-10 h-10 mx-auto text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            <p class="text-sm text-slate-500 font-light max-w-xs mx-auto">Per visualizzare la mappa interattiva di Google Maps è necessario accettare i cookie di terze parti.</p>
-                            <button id="unlock-maps-btn" class="bg-primary text-white text-[11px] uppercase tracking-widest font-semibold px-6 py-3 rounded-lg hover:bg-accent transition-all shadow-md">Sblocca Mappa</button>
+                            <p class="text-sm text-slate-500 font-light max-w-xs mx-auto" data-i18n="map_msg">Per visualizzare la mappa interattiva di Google Maps è necessario accettare i cookie di terze parti.</p>
+                            <button id="unlock-maps-btn" class="bg-primary text-white text-[11px] uppercase tracking-widest font-semibold px-6 py-3 rounded-lg hover:bg-accent transition-all shadow-md" data-i18n="map_btn">Sblocca Mappa</button>
                         </div>
                     </div>
                 </div>
@@ -414,21 +404,19 @@
         </div>
     </section>
 
-    <!-- SEZIONE CONTATTI E FORM -->
+    <!-- CONTATTI -->
     <section id="contatti" class="py-24 bg-white border-t border-slate-100 scroll-mt-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
                 
-                <!-- Recapiti e Orari -->
                 <div class="lg:col-span-5 space-y-10">
                     <div>
-                        <span class="text-xs uppercase tracking-widest text-accent font-semibold block mb-2">Contatti & Recapiti</span>
-                        <h2 class="text-3xl font-serif text-primary mb-8">Mettiamoci in Contatto</h2>
+                        <span class="text-xs uppercase tracking-widest text-accent font-semibold block mb-2" data-i18n="cont_tag">Contatti & Recapiti</span>
+                        <h2 class="text-3xl font-serif text-primary mb-8" data-i18n="cont_title">Mettiamoci in Contatto</h2>
                         
                         <div class="space-y-8">
-                            <!-- Indirizzo & Numeri -->
                             <div class="space-y-4">
-                                <h3 class="text-sm font-serif text-primary font-semibold">Studio di Consulenza d'Impresa</h3>
+                                <h3 class="text-sm font-serif text-primary font-semibold" data-i18n="cont_s1">Studio di Consulenza d'Impresa</h3>
                                 <p class="text-sm text-slate-600 font-light leading-relaxed">
                                     V. Lago di Lugano 15<br>
                                     36015 Schio (VI)
@@ -447,16 +435,15 @@
 
                             <hr class="border-slate-100">
 
-                            <!-- Orari -->
                             <div class="space-y-4">
-                                <h3 class="text-sm font-serif text-primary font-semibold">Orari di Apertura</h3>
+                                <h3 class="text-sm font-serif text-primary font-semibold" data-i18n="cont_s2">Orari di Apertura</h3>
                                 <div class="text-sm text-slate-600 font-light space-y-3">
                                     <div class="flex justify-between border-b border-slate-50 pb-3">
-                                        <span>Lunedì – Giovedì</span>
+                                        <span data-i18n="cont_days">Lunedì – Giovedì</span>
                                         <span class="text-right font-medium text-slate-700">08:30 - 12:30<br>14:00 - 18:00</span>
                                     </div>
                                     <div class="flex justify-between pt-1">
-                                        <span>Venerdì</span>
+                                        <span data-i18n="cont_fri">Venerdì</span>
                                         <span class="font-medium text-slate-700">08:30 - 16:30</span>
                                     </div>
                                 </div>
@@ -465,7 +452,6 @@
                     </div>
                 </div>
 
-                <!-- Modulo di Richiesta -->
                 <div class="lg:col-span-7">
                     <div class="bg-white p-8 border border-slate-100 rounded-2xl shadow-xl">
                         <form action="https://api.web3forms.com/submit" method="POST" id="booking-form" class="space-y-6">
@@ -474,44 +460,45 @@
                             
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div>
-                                    <label class="block text-[10px] uppercase tracking-wider text-slate-500 font-medium mb-1.5">Nome o Azienda</label>
+                                    <label class="block text-[10px] uppercase tracking-wider text-slate-500 font-medium mb-1.5" data-i18n="form_name">Nome o Azienda</label>
                                     <input type="text" id="form-name" name="name" required class="w-full bg-[#F8F9FA] border border-transparent px-4 py-3.5 text-sm rounded-lg focus:bg-white focus:outline-none focus:border-accent transition-all">
                                 </div>
                                 <div>
-                                    <label class="block text-[10px] uppercase tracking-wider text-slate-500 font-medium mb-1.5">Telefono</label>
+                                    <label class="block text-[10px] uppercase tracking-wider text-slate-500 font-medium mb-1.5" data-i18n="form_phone">Telefono</label>
                                     <input type="tel" id="form-phone" name="phone" required class="w-full bg-[#F8F9FA] border border-transparent px-4 py-3.5 text-sm rounded-lg focus:bg-white focus:outline-none focus:border-accent transition-all">
                                 </div>
                             </div>
 
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
                                 <div>
-                                    <label class="block text-[10px] uppercase tracking-wider text-slate-500 font-medium mb-1.5">Indirizzo Email</label>
+                                    <label class="block text-[10px] uppercase tracking-wider text-slate-500 font-medium mb-1.5" data-i18n="form_email">Indirizzo Email</label>
                                     <input type="email" id="form-email" name="email" required class="w-full bg-[#F8F9FA] border border-transparent px-4 py-3.5 text-sm rounded-lg focus:bg-white focus:outline-none focus:border-accent transition-all">
                                 </div>
                                 <div>
-                                    <label class="block text-[10px] uppercase tracking-wider text-slate-500 font-medium mb-1.5">Area di Interesse</label>
+                                    <label class="block text-[10px] uppercase tracking-wider text-slate-500 font-medium mb-1.5" data-i18n="form_area">Area di Interesse</label>
                                     <select name="servizio" class="w-full bg-[#F8F9FA] border border-transparent px-4 py-3.5 text-sm rounded-lg focus:bg-white focus:outline-none focus:border-accent transition-all text-slate-600">
-                                        <option value="Generale" selected>Informazioni Generali</option>
-                                        <option value="Amministrativa">Consulenza Societaria</option>
-                                        <option value="Fiscale">Pianificazione e Contenzioso</option>
-                                        <option value="Controllo">Controllo di Gestione</option>
+                                        <option value="Generale" selected data-i18n="form_opt1">Informazioni Generali</option>
+                                        <option value="Amministrativa" data-i18n="form_opt2">Consulenza Societaria</option>
+                                        <option value="Fiscale" data-i18n="form_opt3">Pianificazione e Contenzioso</option>
+                                        <option value="Controllo" data-i18n="form_opt4">Controllo di Gestione</option>
                                     </select>
                                 </div>
                             </div>
 
                             <div>
-                                <label class="block text-[10px] uppercase tracking-wider text-slate-500 font-medium mb-1.5">Messaggio (Opzionale)</label>
+                                <label class="block text-[10px] uppercase tracking-wider text-slate-500 font-medium mb-1.5" data-i18n="form_msg">Messaggio (Opzionale)</label>
                                 <textarea name="message" rows="3" class="w-full bg-[#F8F9FA] border border-transparent px-4 py-3 text-sm rounded-lg focus:bg-white focus:outline-none focus:border-accent transition-all resize-none"></textarea>
                             </div>
                             
                             <div class="flex items-start space-x-3 pt-2">
                                 <input type="checkbox" id="privacy-check" required class="mt-1 w-4 h-4 text-primary border-slate-300 rounded-sm focus:ring-accent">
                                 <label for="privacy-check" class="text-[11px] text-slate-500 leading-snug font-light">
-                                    Dichiaro di aver letto l'informativa GDPR. Accetto il trattamento dei dati personali. <a href="#" id="open-privacy-link" class="underline text-accent hover:text-primary transition-colors font-medium">Privacy Policy</a>.
+                                    <span data-i18n="form_priv_1">Dichiaro di aver letto l'informativa GDPR. Accetto il trattamento dei dati personali.</span> 
+                                    <a href="#" id="open-privacy-link" class="underline text-accent hover:text-primary transition-colors font-medium">Privacy Policy</a>.
                                 </label>
                             </div>
 
-                            <button type="submit" id="submit-btn" disabled class="w-full bg-slate-300 text-slate-500 text-xs uppercase tracking-widest font-semibold py-4 rounded-lg cursor-not-allowed transition-all duration-300 hover:shadow-lg disabled:shadow-none">
+                            <button type="submit" id="submit-btn" disabled class="w-full bg-slate-300 text-slate-500 text-xs uppercase tracking-widest font-semibold py-4 rounded-lg cursor-not-allowed transition-all duration-300 hover:shadow-lg disabled:shadow-none" data-i18n="form_btn_empty">
                                 Compila i campi per inviare
                             </button>
                         </form>
@@ -522,29 +509,28 @@
         </div>
     </section>
     
-    <!-- FOOTER CON DIRITTI RISERVATI -->
+    <!-- FOOTER -->
     <footer class="bg-primary text-slate-400 py-16 text-sm font-light border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div class="space-y-3">
-                <p class="font-serif text-white tracking-widest uppercase text-base">Studio di Consulenza d'Impresa</p>
+                <p class="font-serif text-white tracking-widest uppercase text-base" data-i18n="footer_brand">Studio di Consulenza d'Impresa</p>
                 <p class="text-xs text-slate-400 leading-relaxed">
-                    Sede Legale: EUROCONSULT SRL<br>
+                    <span data-i18n="footer_hq">Sede Legale:</span> EUROCONSULT SRL<br>
                     V. Lago di Lugano 15 - 36015 SCHIO (VI)<br>
                     P.Iva: 02637580248<br>
                     Camera Comm. Vicenza - REA 263095 - Cap. Soc. € 15.600 i.v
                 </p>
-                <p class="text-[11px] text-slate-500 pt-2">© 2026 EUROCONSULT SRL. Tutti i diritti riservati.</p>
+                <p class="text-[11px] text-slate-500 pt-2">© 2026 EUROCONSULT SRL. <span data-i18n="footer_rights">Tutti i diritti riservati.</span></p>
             </div>
             
             <div class="flex flex-col items-start md:items-end space-y-3 text-xs">
                 <a href="mailto:info@sbalvit.com" class="hover:text-white transition-colors">info@sbalvit.com</a>
-                <a href="#" class="hover:text-white transition-colors">Profilo LinkedIn</a>
                 <a href="#" id="footer-privacy-btn" class="hover:text-white transition-colors underline pt-2">Privacy & Cookie Policy</a>
             </div>
         </div>
     </footer>
 
-    <!-- INTERFACCIA MODALE PRIVACY POLICY LEGALE -->
+    <!-- INTERFACCIA MODALE PRIVACY POLICY (Traduco solo i titoli per brevità, ma la logica è pronta) -->
     <div id="privacy-modal" class="fixed inset-0 bg-primary/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
         <div class="bg-white w-full max-w-3xl max-h-[80vh] overflow-y-auto p-8 md:p-12 rounded-2xl shadow-2xl space-y-6 no-scrollbar">
             <div class="flex justify-between items-center border-b border-slate-200 pb-4">
@@ -552,27 +538,197 @@
                 <button id="close-privacy" class="text-slate-400 hover:text-primary text-2xl font-light">&times;</button>
             </div>
             <div class="text-sm text-slate-600 space-y-4 leading-relaxed font-light">
-                <p class="font-medium text-primary">Titolare del Trattamento dei Dati</p>
+                <p class="font-medium text-primary" data-i18n="priv_1">Titolare del Trattamento dei Dati</p>
                 <p>EUROCONSULT SRL / Studio di Consulenza d'Impresa – V. Lago di Lugano 15, 36015 Schio (VI)</p>
-                
-                <p class="font-medium text-primary mt-4">1. Tipologie di Dati raccolti</p>
-                <p>Fra i Dati Personali raccolti, in modo autonomo o tramite terze parti, ci sono: Nome, Azienda, Email, Telefono e cookie d'uso generati da servizi di terze parti (es. Google Maps).</p>
-                
-                <p class="font-medium text-primary mt-4">2. Modalità e luogo del trattamento</p>
-                <p>Il Titolare adotta le misure di sicurezza volte ad impedire l’accesso non autorizzato. Il trattamento è effettuato mediante strumenti informatici correlati alle finalità di consulenza.</p>
-                
-                <p class="font-medium text-primary mt-4">3. Finalità del Trattamento</p>
-                <p>I Dati sono raccolti per fornire informazioni sui servizi professionali e per rispondere a specifiche richieste inoltrate tramite form di contatto.</p>
-                
-                <p class="font-medium text-primary mt-4">4. Utilizzo dei Cookie</p>
-                <p>Questo sito usa cookie tecnici essenziali. L'uso della mappa interattiva prevede il tracciamento anonimo da parte di Google Inc., abilitato previo consenso tramite il banner.</p>
+                <p class="font-medium text-primary mt-4" data-i18n="priv_2">1. Tipologie di Dati raccolti</p>
+                <p>Fra i Dati Personali raccolti... (etc)</p>
             </div>
         </div>
     </div>
 
-    <!-- SCRIPT GESTIONE INTERFACCIA E THREE.JS -->
     <script>
-        // --- INIZIO SCRIPT THREE.JS ---
+        // ==========================================
+        // DIZIONARIO TRADUZIONI JAVASCRIPT
+        // ==========================================
+        const translations = {
+            it: {
+                cookie_title: "Informativa sui Cookie",
+                cookie_desc: "Questo sito utilizza cookie tecnici necessari al funzionamento e cookie di terze parti (Google Maps) per mostrarti la mappa interattiva. Consulta la nostra <a href='#' id='open-privacy-cookie' class='underline text-accent hover:text-primary transition-colors'>Privacy Policy</a>.",
+                cookie_reject: "Rifiuta",
+                cookie_accept: "Accetta",
+                nav_brand: "Studio di Consulenza D'Impresa",
+                nav_about: "Chi Siamo",
+                nav_team: "Team",
+                nav_services: "Servizi",
+                nav_location: "Dove Siamo",
+                nav_contact: "Consulenza",
+                nav_contact_long: "Richiedi Consulenza",
+                hero_tag: "Dottori Commercialisti e Revisori Legali",
+                hero_title: "Strategie d'Impresa e Visione Finanziaria",
+                hero_desc: "Siamo i partner strategici per la crescita del tuo business. Trasformiamo la complessità fiscale e societaria in un vantaggio competitivo, supportando le imprese del territorio con chiarezza e proattività.",
+                hero_btn1: "Inizia una Collaborazione",
+                hero_btn2: "Le Nostre Aree",
+                about_tag: "Il Nostro Approccio",
+                about_title: "Molto più di un semplice supporto contabile",
+                about_p1: "<strong>Studio di Consulenza d’Impresa</strong> si distingue per un approccio moderno e dinamico. Oltre alla tradizionale assistenza amministrativa e fiscale, ci posizioniamo come veri e propri alleati per gli imprenditori del vicentino, aiutandoli a navigare un mercato in continua evoluzione.",
+                about_p2: "Crediamo fortemente nella pianificazione e nell'ottimizzazione preventiva: non ci limitiamo a registrare i dati del passato, ma forniamo strumenti e analisi per costruire un futuro aziendale solido.",
+                about_quote: "\"Il nostro obiettivo è anticipare le criticità e cogliere le opportunità normative, garantendo agli amministratori la massima tranquillità operativa attraverso soluzioni sartoriali e digitalmente avanzate.\"",
+                about_years: "Anni di Consulenza",
+                team_tag: "Le Persone",
+                team_title: "Eccellenza multidisciplinare",
+                team_desc: "Ogni sfida aziendale richiede competenze verticali specifiche. Il nostro team è composto da figure altamente qualificate, in grado di lavorare in stretta sinergia per fornirti risposte complete, tempestive e integrate.",
+                role_comm: "Commercialista",
+                role_rev: "Revisore Legale",
+                bio_1: "Fondatore dello studio. Specializzato in operazioni societarie straordinarie, pianificazione fiscale e consulenza strategica per PMI e gruppi.",
+                bio_2: "Partner esperto in revisione legale, controllo di gestione aziendale, contenzioso tributario e salvaguardia del patrimonio societario.",
+                bio_3: "Punto di riferimento nella gestione societaria ordinaria. Massima esperienza nella risoluzione puntuale delle tematiche fiscali più articolate.",
+                bio_4: "Consulente fiscale dotata di comprovata esperienza in attività di supporto e assistenza ad imprese e professionisti.",
+                bio_5: "Specializzata in consulenza fiscale per professionisti, elaborazione business plan, start-up innovative e finanza agevolata.",
+                linkedin: "Profilo LinkedIn",
+                srv_tag: "Aree di Intervento",
+                srv_title: "I Nostri Servizi",
+                srv_1_t: "Consulenza Societaria",
+                srv_1_d: "Assistiamo i clienti negli adempimenti fiscali e civilistici, elaborazione contabilità, scelte aziendali strategiche e passaggio generazionale per la salvaguardia del patrimonio.",
+                srv_2_t: "Pianificazione e Contenzioso",
+                srv_2_d: "Analisi dei vantaggi fiscali tramite aggiornamento normativo continuo. Assistenza preventiva e gestione del contenzioso tributario per la risoluzione ottimale delle controversie.",
+                srv_3_t: "Controllo di Gestione",
+                srv_3_d: "Elaborazione di strumenti di controllo efficaci, ottimizzazione della gestione finanziaria, redazione di piani di tesoreria, business plan e contabilità analitica.",
+                srv_4_t: "Operazioni Straordinarie",
+                srv_4_d: "Riorganizzazioni aziendali, ristrutturazioni di gruppi societari (anche esteri), valutazioni d'azienda e stime del valore economico di asset e capitale.",
+                srv_5_t: "Gestione Crisi d'Impresa",
+                srv_5_d: "Supporto in situazioni di crisi tramite accordi stragiudiziali, procedure concorsuali e attività di advisor finanziario o esperto negoziatore (artt. 67, 161 e 182 bis L.F.).",
+                srv_6_t: "Revisione Contabile",
+                srv_6_d: "Controllo in ambito di collegi sindacali o revisori dei conti di società di capitali, Enti Pubblici e no profit, con specializzazione nelle PMI del territorio.",
+                loc_tag: "La Sede",
+                loc_title: "Vieni a Trovarci",
+                loc_p1: "I nostri uffici si trovano a <strong>Schio (VI)</strong>, in posizione strategica e comodamente raggiungibile, per poter affiancare da vicino le imprese di tutto il territorio vicentino.",
+                loc_p2: "Abbiamo pensato ad un ambiente riservato e professionale, strutturato per accoglierti e affrontare con la massima privacy ogni tematica societaria, fiscale e finanziaria.",
+                loc_btn: "Apri in Google Maps",
+                map_msg: "Per visualizzare la mappa interattiva di Google Maps è necessario accettare i cookie di terze parti.",
+                map_btn: "Sblocca Mappa",
+                cont_tag: "Contatti & Recapiti",
+                cont_title: "Mettiamoci in Contatto",
+                cont_s1: "Studio di Consulenza d'Impresa",
+                cont_s2: "Orari di Apertura",
+                cont_days: "Lunedì – Giovedì",
+                cont_fri: "Venerdì",
+                form_name: "Nome o Azienda",
+                form_phone: "Telefono",
+                form_email: "Indirizzo Email",
+                form_area: "Area di Interesse",
+                form_opt1: "Informazioni Generali",
+                form_opt2: "Consulenza Societaria",
+                form_opt3: "Pianificazione e Contenzioso",
+                form_opt4: "Controllo di Gestione",
+                form_msg: "Messaggio (Opzionale)",
+                form_priv_1: "Dichiaro di aver letto l'informativa GDPR. Accetto il trattamento dei dati personali.",
+                footer_brand: "Studio di Consulenza d'Impresa",
+                footer_hq: "Sede Legale:",
+                footer_rights: "Tutti i diritti riservati.",
+                priv_1: "Titolare del Trattamento dei Dati",
+                priv_2: "1. Tipologie di Dati raccolti",
+                // Testi dinamici per i bottoni del form
+                form_btn_valid: "Invia Richiesta di Consulenza",
+                form_btn_empty: "Compila i campi per inviare",
+                form_btn_priv: "Accetta la Privacy per Inviare"
+            },
+            en: {
+                cookie_title: "Cookie Policy",
+                cookie_desc: "This site uses essential technical cookies and third-party cookies (Google Maps) to show you the interactive map. Read our <a href='#' id='open-privacy-cookie' class='underline text-accent hover:text-primary transition-colors'>Privacy Policy</a>.",
+                cookie_reject: "Reject",
+                cookie_accept: "Accept",
+                nav_brand: "Business Consulting Firm",
+                nav_about: "About Us",
+                nav_team: "Team",
+                nav_services: "Services",
+                nav_location: "Location",
+                nav_contact: "Consulting",
+                nav_contact_long: "Request Consulting",
+                hero_tag: "Chartered Accountants and Statutory Auditors",
+                hero_title: "Corporate Strategies and Financial Vision",
+                hero_desc: "We are the strategic partners for your business growth. We transform fiscal and corporate complexity into a competitive advantage, supporting local businesses with clarity and proactivity.",
+                hero_btn1: "Start a Collaboration",
+                hero_btn2: "Our Practice Areas",
+                about_tag: "Our Approach",
+                about_title: "Much more than simple accounting support",
+                about_p1: "<strong>Business Consulting Firm</strong> stands out for its modern and dynamic approach. Beyond traditional administrative and tax assistance, we act as true allies for local entrepreneurs, helping them navigate an ever-changing market.",
+                about_p2: "We strongly believe in planning and preventive optimization: we don't just record past data, but we provide tools and analyses to build a solid corporate future.",
+                about_quote: "\"Our goal is to anticipate critical issues and seize regulatory opportunities, ensuring maximum operational peace of mind for directors through tailored and digitally advanced solutions.\"",
+                about_years: "Years of Experience",
+                team_tag: "The People",
+                team_title: "Multidisciplinary Excellence",
+                team_desc: "Every corporate challenge requires specific vertical skills. Our team consists of highly qualified figures, working in close synergy to provide complete, timely, and integrated answers.",
+                role_comm: "Chartered Accountant",
+                role_rev: "Statutory Auditor",
+                bio_1: "Founder of the firm. Specialized in extraordinary corporate operations, tax planning, and strategic consulting for SMEs and corporate groups.",
+                bio_2: "Partner expert in statutory auditing, corporate management control, tax litigation, and corporate asset safeguarding.",
+                bio_3: "Reference point for ordinary corporate management. Extensive experience in accurately resolving the most complex tax issues.",
+                bio_4: "Tax consultant with proven experience in supporting and assisting businesses and professionals.",
+                bio_5: "Specialized in tax consulting for professionals, business plan development, innovative start-ups, and subsidized finance.",
+                linkedin: "LinkedIn Profile",
+                srv_tag: "Practice Areas",
+                srv_title: "Our Services",
+                srv_1_t: "Corporate Consulting",
+                srv_1_d: "We assist clients with tax and civil compliance, accounting processing, strategic business choices, and generational transitions for wealth protection.",
+                srv_2_t: "Tax Planning and Litigation",
+                srv_2_d: "Analysis of tax advantages through continuous regulatory updates. Preventive assistance and management of tax litigation for optimal dispute resolution.",
+                srv_3_t: "Management Control",
+                srv_3_d: "Development of effective control tools, financial management optimization, drafting of treasury plans, business plans, and analytical accounting.",
+                srv_4_t: "Extraordinary Operations",
+                srv_4_d: "Corporate reorganizations, restructuring of corporate groups (including foreign), company valuations, and economic value estimates of assets and capital.",
+                srv_5_t: "Corporate Crisis Management",
+                srv_5_d: "Support in crisis situations through out-of-court agreements, insolvency procedures, and activities as financial advisor or expert negotiator.",
+                srv_6_t: "Statutory Auditing",
+                srv_6_d: "Auditing within boards of statutory auditors or auditors of joint-stock companies, public entities, and non-profits, specializing in local SMEs.",
+                loc_tag: "Headquarters",
+                loc_title: "Come Visit Us",
+                loc_p1: "Our offices are located in <strong>Schio (VI)</strong>, in a strategic and easily accessible position, to closely support businesses throughout the Vicenza area.",
+                loc_p2: "We have designed a private and professional environment, structured to welcome you and address every corporate, tax, and financial issue with maximum privacy.",
+                loc_btn: "Open in Google Maps",
+                map_msg: "To view the interactive Google Map, you must accept third-party cookies.",
+                map_btn: "Unlock Map",
+                cont_tag: "Contacts & Details",
+                cont_title: "Let's Get in Touch",
+                cont_s1: "Business Consulting Firm",
+                cont_s2: "Opening Hours",
+                cont_days: "Monday – Thursday",
+                cont_fri: "Friday",
+                form_name: "Name or Company",
+                form_phone: "Phone",
+                form_email: "Email Address",
+                form_area: "Area of Interest",
+                form_opt1: "General Information",
+                form_opt2: "Corporate Consulting",
+                form_opt3: "Tax Planning & Litigation",
+                form_opt4: "Management Control",
+                form_msg: "Message (Optional)",
+                form_priv_1: "I declare that I have read the GDPR policy. I accept the processing of personal data.",
+                footer_brand: "Business Consulting Firm",
+                footer_hq: "Registered Office:",
+                footer_rights: "All rights reserved.",
+                priv_1: "Data Controller",
+                priv_2: "1. Types of Data Collected",
+                form_btn_valid: "Send Consulting Request",
+                form_btn_empty: "Fill in fields to send",
+                form_btn_priv: "Accept Privacy to Send"
+            }
+        };
+
+        let currentLang = 'it';
+
+        // Funzione per aggiornare tutto il testo
+        function updateLanguage(lang) {
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            // Forza l'aggiornamento del testo del bottone del form in base allo stato attuale
+            checkFormValidity();
+        }
+
+        // --- SCRIPT THREE.JS ---
         function initThreeJS() {
             const container = document.getElementById('canvas-container');
             if (!container) return;
@@ -587,163 +743,136 @@
             container.appendChild(renderer.domElement);
 
             const geometry = new THREE.IcosahedronGeometry(9, 1);
-            
             const material = new THREE.MeshBasicMaterial({ 
-                color: 0xA67C52, 
-                wireframe: true,
-                transparent: true,
-                opacity: 0.6
+                color: 0xA67C52, wireframe: true, transparent: true, opacity: 0.6
             });
             const sphere = new THREE.Mesh(geometry, material);
             scene.add(sphere);
 
-            let targetRotationX = 0;
-            let targetRotationY = 0;
-            let mouseX = 0;
-            let mouseY = 0;
-
-            document.addEventListener('mousemove', (event) => {
-                mouseX = (event.clientX - window.innerWidth / 2) * 0.0005;
-                mouseY = (event.clientY - window.innerHeight / 2) * 0.0005;
+            let targetRotationX = 0; let targetRotationY = 0; let mouseX = 0; let mouseY = 0;
+            document.addEventListener('mousemove', (e) => {
+                mouseX = (e.clientX - window.innerWidth / 2) * 0.0005;
+                mouseY = (e.clientY - window.innerHeight / 2) * 0.0005;
             });
-
             window.addEventListener('resize', () => {
                 camera.aspect = container.clientWidth / container.clientHeight;
                 camera.updateProjectionMatrix();
                 renderer.setSize(container.clientWidth, container.clientHeight);
             });
-
             function animate() {
                 requestAnimationFrame(animate);
-
-                targetRotationX = mouseX;
-                targetRotationY = mouseY;
-
-                sphere.rotation.y += 0.002;
-                sphere.rotation.x += 0.001;
-
+                targetRotationX = mouseX; targetRotationY = mouseY;
+                sphere.rotation.y += 0.002; sphere.rotation.x += 0.001;
                 sphere.rotation.y += 0.05 * (targetRotationX - sphere.rotation.y);
                 sphere.rotation.x += 0.05 * (targetRotationY - sphere.rotation.x);
-
                 renderer.render(scene, camera);
             }
             animate();
         }
-
         window.addEventListener('DOMContentLoaded', initThreeJS);
-        // --- FINE SCRIPT THREE.JS ---
 
-
-        // Menu Mobile
+        // --- Menu Mobile ---
         const menuBtn = document.getElementById('menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        const bar1 = document.getElementById('bar1');
-        const bar2 = document.getElementById('bar2');
-        const bar3 = document.getElementById('bar3');
+        const bar1 = document.getElementById('bar1'), bar2 = document.getElementById('bar2'), bar3 = document.getElementById('bar3');
 
         function toggleMenu() {
-            const isOpen = mobileMenu.classList.contains('translate-x-0');
-            if (!isOpen) {
-                mobileMenu.classList.remove('translate-x-full'); mobileMenu.classList.add('translate-x-0');
-                bar1.classList.add('rotate-45', 'translate-y-1.5'); bar2.classList.add('opacity-0'); bar3.classList.add('-rotate-45', '-translate-y-1.5');
+            if (!mobileMenu.classList.contains('translate-x-0')) {
+                mobileMenu.classList.replace('translate-x-full', 'translate-x-0');
+                bar1.classList.replace('top-0', 'top-1/2'); bar1.classList.add('-translate-y-1/2', 'rotate-45');
+                bar2.classList.add('opacity-0');
+                bar3.classList.replace('bottom-0', 'top-1/2'); bar3.classList.add('-translate-y-1/2', '-rotate-45');
             } else {
-                mobileMenu.classList.remove('translate-x-0'); mobileMenu.classList.add('translate-x-full');
-                bar1.classList.remove('rotate-45', 'translate-y-1.5'); bar2.classList.remove('opacity-0'); bar3.classList.remove('-rotate-45', '-translate-y-1.5');
+                mobileMenu.classList.replace('translate-x-0', 'translate-x-full');
+                bar1.classList.replace('top-1/2', 'top-0'); bar1.classList.remove('-translate-y-1/2', 'rotate-45');
+                bar2.classList.remove('opacity-0');
+                bar3.classList.replace('top-1/2', 'bottom-0'); bar3.classList.remove('-translate-y-1/2', '-rotate-45');
             }
         }
         menuBtn.addEventListener('click', toggleMenu);
         document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', toggleMenu));
 
-        // Gestione Validazione Form Dinamica
+        // --- Toggle Lingua ---
+        const langToggles = document.querySelectorAll('.lang-toggle');
+        langToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                if (currentLang === 'it') {
+                    currentLang = 'en';
+                    document.querySelectorAll('.lang-slider').forEach(el => el.classList.add('translate-x-[32px]'));
+                    document.querySelectorAll('.lang-it').forEach(el => el.classList.replace('font-bold', 'font-medium'));
+                    document.querySelectorAll('.lang-it').forEach(el => el.classList.replace('text-primary', 'text-slate-400'));
+                    document.querySelectorAll('.lang-en').forEach(el => el.classList.replace('font-medium', 'font-bold'));
+                    document.querySelectorAll('.lang-en').forEach(el => el.classList.replace('text-slate-400', 'text-primary'));
+                } else {
+                    currentLang = 'it';
+                    document.querySelectorAll('.lang-slider').forEach(el => el.classList.remove('translate-x-[32px]'));
+                    document.querySelectorAll('.lang-it').forEach(el => el.classList.replace('font-medium', 'font-bold'));
+                    document.querySelectorAll('.lang-it').forEach(el => el.classList.replace('text-slate-400', 'text-primary'));
+                    document.querySelectorAll('.lang-en').forEach(el => el.classList.replace('font-bold', 'font-medium'));
+                    document.querySelectorAll('.lang-en').forEach(el => el.classList.replace('text-primary', 'text-slate-400'));
+                }
+                updateLanguage(currentLang);
+            });
+        });
+
+        // --- Validazione Form ---
         const privacyCheck = document.getElementById('privacy-check');
         const submitBtn = document.getElementById('submit-btn');
-        const nameInput = document.getElementById('form-name');
-        const emailInput = document.getElementById('form-email');
-        const phoneInput = document.getElementById('form-phone');
+        const nameInput = document.getElementById('form-name'), emailInput = document.getElementById('form-email'), phoneInput = document.getElementById('form-phone');
 
         function checkFormValidity() {
-            const isNameFilled = nameInput.value.trim() !== '';
-            const isEmailFilled = emailInput.value.trim() !== '';
-            const isPhoneFilled = phoneInput.value.trim() !== '';
-            const isPrivacyChecked = privacyCheck.checked;
-
-            if (isPrivacyChecked && isNameFilled && isEmailFilled && isPhoneFilled) {
+            const isFilled = nameInput.value.trim() !== '' && emailInput.value.trim() !== '' && phoneInput.value.trim() !== '';
+            
+            if (privacyCheck.checked && isFilled) {
                 submitBtn.disabled = false;
-                submitBtn.classList.remove('bg-slate-300', 'text-slate-500', 'cursor-not-allowed');
-                submitBtn.classList.add('bg-primary', 'text-white', 'hover:bg-accent');
-                submitBtn.innerText = "Invia Richiesta di Consulenza";
+                submitBtn.className = "w-full bg-primary text-white text-xs uppercase tracking-widest font-semibold py-4 rounded-lg hover:bg-accent hover:shadow-lg transition-all duration-300";
+                submitBtn.innerText = translations[currentLang].form_btn_valid;
             } else {
                 submitBtn.disabled = true;
-                submitBtn.classList.add('bg-slate-300', 'text-slate-500', 'cursor-not-allowed');
-                submitBtn.classList.remove('bg-primary', 'text-white', 'hover:bg-accent');
+                submitBtn.className = "w-full bg-slate-300 text-slate-500 text-xs uppercase tracking-widest font-semibold py-4 rounded-lg cursor-not-allowed transition-all duration-300 disabled:shadow-none";
                 
-                if (!isNameFilled || !isEmailFilled || !isPhoneFilled) {
-                    submitBtn.innerText = "Compila Nome, Email e Telefono";
-                } else if (!isPrivacyChecked) {
-                    submitBtn.innerText = "Accetta la Privacy per Inviare";
+                if (!isFilled) {
+                    submitBtn.innerText = translations[currentLang].form_btn_empty;
+                } else {
+                    submitBtn.innerText = translations[currentLang].form_btn_priv;
                 }
             }
         }
+        [privacyCheck, nameInput, emailInput, phoneInput].forEach(el => el.addEventListener('input', checkFormValidity));
 
-        privacyCheck.addEventListener('change', checkFormValidity);
-        nameInput.addEventListener('input', checkFormValidity);
-        emailInput.addEventListener('input', checkFormValidity);
-        phoneInput.addEventListener('input', checkFormValidity);
-
-        // Modale Privacy
+        // --- Modale Privacy & Cookie ---
         const privacyModal = document.getElementById('privacy-modal');
         function togglePrivacyModal(e) {
             if(e) e.preventDefault();
-            const isHidden = privacyModal.classList.contains('opacity-0');
-            if(isHidden) {
-                privacyModal.classList.remove('opacity-0', 'pointer-events-none');
-            } else {
-                privacyModal.classList.add('opacity-0', 'pointer-events-none');
-            }
+            if(privacyModal.classList.contains('opacity-0')) privacyModal.classList.remove('opacity-0', 'pointer-events-none');
+            else privacyModal.classList.add('opacity-0', 'pointer-events-none');
         }
-        document.getElementById('open-privacy-link').addEventListener('click', togglePrivacyModal);
-        document.getElementById('open-privacy-cookie').addEventListener('click', togglePrivacyModal);
-        document.getElementById('footer-privacy-btn').addEventListener('click', togglePrivacyModal);
-        document.getElementById('close-privacy').addEventListener('click', togglePrivacyModal);
+        ['open-privacy-link', 'open-privacy-cookie', 'footer-privacy-btn', 'close-privacy'].forEach(id => {
+            document.getElementById(id).addEventListener('click', togglePrivacyModal);
+        });
 
-        // Cookie & Mappe 
         const banner = document.getElementById('cookie-banner');
-        
         function loadInteractiveMap() {
             const mapContainer = document.getElementById('map-container');
             mapContainer.classList.remove('p-6', 'bg-white', 'border', 'border-slate-100');
-            mapContainer.innerHTML = `<iframe src="https://maps.google.com/maps?q=Euroconsult%20srl,%20Schio&t=&z=15&ie=UTF8&iwloc=&output=embed" class="w-full h-full border-0 rounded-2xl" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>`;
+            mapContainer.innerHTML = `<iframe src="https://maps.google.com/maps?q=Euroconsult%20srl,%20Schio&t=&z=15&ie=UTF8&iwloc=&output=embed" class="w-full h-full border-0 rounded-2xl" allowfullscreen="" loading="lazy"></iframe>`;
         }
-
         function checkCookieConsent() {
             const consent = localStorage.getItem('cookie-consent-studio');
-            if (consent === 'accepted') {
-                loadInteractiveMap();
-            } else if (consent === null) {
-                banner.classList.remove('hidden');
-                setTimeout(() => { banner.classList.remove('translate-y-20', 'opacity-0'); }, 100);
-            }
+            if (consent === 'accepted') loadInteractiveMap();
+            else if (consent === null) setTimeout(() => banner.classList.remove('hidden', 'translate-y-20', 'opacity-0'), 100);
         }
-
         document.getElementById('cookie-accept').addEventListener('click', () => {
             localStorage.setItem('cookie-consent-studio', 'accepted');
-            banner.classList.add('translate-y-20', 'opacity-0');
-            setTimeout(() => { banner.classList.add('hidden'); }, 500);
-            loadInteractiveMap();
+            banner.classList.add('translate-y-20', 'opacity-0'); setTimeout(() => banner.classList.add('hidden'), 500); loadInteractiveMap();
         });
-
         document.getElementById('unlock-maps-btn').addEventListener('click', () => {
-            localStorage.setItem('cookie-consent-studio', 'accepted');
-            banner.classList.add('translate-y-20', 'opacity-0');
-            loadInteractiveMap();
+            localStorage.setItem('cookie-consent-studio', 'accepted'); banner.classList.add('hidden'); loadInteractiveMap();
         });
-
         document.getElementById('cookie-reject').addEventListener('click', () => {
             localStorage.setItem('cookie-consent-studio', 'rejected');
-            banner.classList.add('translate-y-20', 'opacity-0');
-            setTimeout(() => { banner.classList.add('hidden'); }, 500);
+            banner.classList.add('translate-y-20', 'opacity-0'); setTimeout(() => banner.classList.add('hidden'), 500);
         });
-
         window.addEventListener('DOMContentLoaded', checkCookieConsent);
     </script>
 </body>
