@@ -24,6 +24,9 @@
         .hero-gradient { background: linear-gradient(to right, rgba(15, 23, 42, 0.95) 0%, rgba(15, 23, 42, 0.75) 50%, rgba(15, 23, 42, 0.1) 100%); }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        
+        /* Modale Tabs Privacy */
+        .tab-btn.active { border-bottom-color: #0F172A; color: #0F172A; font-weight: 600; }
     </style>
 </head>
 <body class="text-slate-700 antialiased selection:bg-slate-300">
@@ -45,13 +48,9 @@
     <!-- NAVBAR -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-[#F8F9FA]/85 backdrop-blur-md border-b border-slate-200/60 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            
-            <!-- Logo Fisso (Senza data-i18n per evitare la traduzione) -->
             <a href="#hero" class="text-base md:text-lg font-serif font-semibold tracking-wider uppercase text-primary hover:text-accent transition-colors">
                 Euroconsult
             </a>
-
-            <!-- Contenitore Destro -->
             <div class="flex items-center gap-5 md:gap-8">
                 <!-- Menu Desktop -->
                 <nav class="hidden md:flex items-center space-x-8 text-xs tracking-widest uppercase font-medium text-slate-600">
@@ -61,14 +60,12 @@
                     <a href="#location" class="hover:text-accent transition-colors" data-i18n="nav_location">Dove Siamo</a>
                     <a href="#contatti" class="bg-primary text-white px-6 py-2.5 rounded-lg hover:bg-accent transition-colors shadow-sm" data-i18n="nav_contact">Consulenza</a>
                 </nav>
-
                 <!-- Toggle Lingua Desktop -->
                 <div class="lang-toggle hidden md:flex relative items-center bg-slate-400/10 backdrop-blur-xl border border-white/60 p-1 rounded-full shadow-[inset_0_2px_4px_rgba(0,0,0,0.06)] cursor-pointer hover:bg-slate-400/20 transition-colors">
                     <div class="lang-slider absolute left-1 top-1 bottom-1 w-[32px] bg-white rounded-full shadow-[0_2px_8px_rgba(0,0,0,0.12)] transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]"></div>
                     <div class="lang-it relative z-10 w-[32px] h-6 flex items-center justify-center text-[10px] font-bold text-primary transition-colors">IT</div>
                     <div class="lang-en relative z-10 w-[32px] h-6 flex items-center justify-center text-[10px] font-medium text-slate-400 transition-colors">EN</div>
                 </div>
-
                 <!-- Hamburger Button -->
                 <button id="menu-btn" class="md:hidden relative w-6 h-[18px] z-50 focus:outline-none" aria-label="Apri Menu">
                     <span id="bar1" class="absolute top-0 left-0 w-full h-[2px] bg-primary rounded-full transition-all duration-300 ease-out"></span>
@@ -87,7 +84,6 @@
             <a href="#servizi" class="mobile-link text-primary hover:text-accent transition-colors" data-i18n="nav_services">Servizi</a>
             <a href="#location" class="mobile-link text-primary hover:text-accent transition-colors" data-i18n="nav_location">Dove Siamo</a>
             <a href="#contatti" class="mobile-link bg-accent text-white px-8 py-3 rounded-lg uppercase text-xs font-sans tracking-widest font-medium hover:bg-primary transition-colors mt-4" data-i18n="nav_contact_long">Richiedi Consulenza</a>
-            
             <!-- Toggle Lingua Mobile -->
             <div class="pt-8 flex flex-col items-center border-t border-slate-200/60 w-full">
                 <span class="text-[10px] text-slate-400 font-sans tracking-widest uppercase mb-3">Lingua / Language</span>
@@ -106,10 +102,8 @@
             <img src="foto/websites.png" alt="Ufficio Studio Commercialisti" class="w-full h-full object-cover object-center opacity-70">
             <div class="absolute inset-0 hero-gradient z-10"></div>
         </div>
-        
         <!-- Canvas 3D -->
         <div id="canvas-container" class="absolute right-0 top-0 w-full lg:w-1/2 h-full z-15 pointer-events-none opacity-30 lg:opacity-80"></div>
-
         <div class="relative z-20 w-full max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
             <div class="max-w-2xl text-left pointer-events-auto">
                 <span class="text-xs tracking-widest uppercase text-accent font-semibold block mb-6 flex items-center">
@@ -154,7 +148,6 @@
                 <div class="aspect-[4/3] overflow-hidden rounded-2xl shadow-xl border border-slate-100">
                     <img src="foto/riunioni.jpg" alt="Riunione aziendale" class="w-full h-full object-cover">
                 </div>
-                <!-- Box 30+ -->
                 <div class="absolute -bottom-5 -left-5 bg-primary px-6 py-5 rounded-xl text-white hidden md:inline-block shadow-2xl border border-white/10">
                     <p class="text-3xl font-serif text-accent mb-0.5 leading-none">30+</p>
                     <p class="text-[10px] tracking-[0.15em] uppercase font-medium text-slate-300" data-i18n="about_years">Anni di Consulenza</p>
@@ -176,7 +169,6 @@
             </div>
 
             <div class="flex flex-wrap justify-center gap-8">
-                
                 <!-- CARD 1 -->
                 <div tabindex="0" onclick="" style="-webkit-tap-highlight-color: transparent;" class="group relative h-[420px] w-full max-w-[300px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer bg-white outline-none">
                     <img src="foto/sbalchiero.jpg" alt="Dott. Luigino Sbalchiero" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105 group-focus:scale-105" />
@@ -305,66 +297,91 @@
                 <div class="w-12 h-[2px] bg-accent mx-auto mt-6"></div>
             </div>
 
+            <!-- Griglia Servizi Flex Col per allineare i bottoni -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-12">
                 
-                <div class="group border border-slate-100 p-8 hover:border-accent/30 hover:shadow-xl transition-all duration-300 rounded-2xl bg-[#F8F9FA]/50">
+                <div class="group border border-slate-100 p-8 hover:border-accent/30 hover:shadow-xl transition-all duration-300 rounded-2xl bg-[#F8F9FA]/50 flex flex-col h-full">
                     <div class="w-12 h-12 flex items-center justify-center bg-white shadow-sm border border-slate-100 rounded-lg mb-6 group-hover:bg-primary transition-colors text-accent">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
                     </div>
                     <h3 class="text-lg font-serif text-primary mb-3" data-i18n="srv_1_t">Consulenza Societaria</h3>
-                    <p class="text-sm font-light text-slate-600 leading-relaxed" data-i18n="srv_1_d">
+                    <p class="text-sm font-light text-slate-600 leading-relaxed mb-6 flex-grow" data-i18n="srv_1_d">
                         Assistiamo i clienti negli adempimenti fiscali e civilistici, elaborazione contabilità, scelte aziendali strategiche e passaggio generazionale per la salvaguardia del patrimonio.
                     </p>
+                    <button class="open-service-modal text-accent text-xs font-semibold uppercase tracking-widest hover:text-primary transition-colors mt-auto text-left flex items-center" data-service="1">
+                        <span data-i18n="btn_read_more">Scopri di più</span>
+                        <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
                 </div>
 
-                <div class="group border border-slate-100 p-8 hover:border-accent/30 hover:shadow-xl transition-all duration-300 rounded-2xl bg-[#F8F9FA]/50">
+                <div class="group border border-slate-100 p-8 hover:border-accent/30 hover:shadow-xl transition-all duration-300 rounded-2xl bg-[#F8F9FA]/50 flex flex-col h-full">
                     <div class="w-12 h-12 flex items-center justify-center bg-white shadow-sm border border-slate-100 rounded-lg mb-6 group-hover:bg-primary transition-colors text-accent">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                     </div>
                     <h3 class="text-lg font-serif text-primary mb-3" data-i18n="srv_2_t">Pianificazione e Contenzioso</h3>
-                    <p class="text-sm font-light text-slate-600 leading-relaxed" data-i18n="srv_2_d">
+                    <p class="text-sm font-light text-slate-600 leading-relaxed mb-6 flex-grow" data-i18n="srv_2_d">
                         Analisi dei vantaggi fiscali tramite aggiornamento normativo continuo. Assistenza preventiva e gestione del contenzioso tributario per la risoluzione ottimale delle controversie.
                     </p>
+                    <button class="open-service-modal text-accent text-xs font-semibold uppercase tracking-widest hover:text-primary transition-colors mt-auto text-left flex items-center" data-service="2">
+                        <span data-i18n="btn_read_more">Scopri di più</span>
+                        <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
                 </div>
 
-                <div class="group border border-slate-100 p-8 hover:border-accent/30 hover:shadow-xl transition-all duration-300 rounded-2xl bg-[#F8F9FA]/50">
+                <div class="group border border-slate-100 p-8 hover:border-accent/30 hover:shadow-xl transition-all duration-300 rounded-2xl bg-[#F8F9FA]/50 flex flex-col h-full">
                     <div class="w-12 h-12 flex items-center justify-center bg-white shadow-sm border border-slate-100 rounded-lg mb-6 group-hover:bg-primary transition-colors text-accent">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path></svg>
                     </div>
                     <h3 class="text-lg font-serif text-primary mb-3" data-i18n="srv_3_t">Controllo di Gestione</h3>
-                    <p class="text-sm font-light text-slate-600 leading-relaxed" data-i18n="srv_3_d">
+                    <p class="text-sm font-light text-slate-600 leading-relaxed mb-6 flex-grow" data-i18n="srv_3_d">
                         Elaborazione di strumenti di controllo efficaci, ottimizzazione della gestione finanziaria, redazione di piani di tesoreria, business plan e contabilità analitica.
                     </p>
+                    <button class="open-service-modal text-accent text-xs font-semibold uppercase tracking-widest hover:text-primary transition-colors mt-auto text-left flex items-center" data-service="3">
+                        <span data-i18n="btn_read_more">Scopri di più</span>
+                        <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
                 </div>
 
-                <div class="group border border-slate-100 p-8 hover:border-accent/30 hover:shadow-xl transition-all duration-300 rounded-2xl bg-[#F8F9FA]/50">
+                <div class="group border border-slate-100 p-8 hover:border-accent/30 hover:shadow-xl transition-all duration-300 rounded-2xl bg-[#F8F9FA]/50 flex flex-col h-full">
                     <div class="w-12 h-12 flex items-center justify-center bg-white shadow-sm border border-slate-100 rounded-lg mb-6 group-hover:bg-primary transition-colors text-accent">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg>
                     </div>
                     <h3 class="text-lg font-serif text-primary mb-3" data-i18n="srv_4_t">Operazioni Straordinarie</h3>
-                    <p class="text-sm font-light text-slate-600 leading-relaxed" data-i18n="srv_4_d">
+                    <p class="text-sm font-light text-slate-600 leading-relaxed mb-6 flex-grow" data-i18n="srv_4_d">
                         Riorganizzazioni aziendali, ristrutturazioni di gruppi societari (anche esteri), valutazioni d'azienda e stime del valore economico di asset e capitale.
                     </p>
+                    <button class="open-service-modal text-accent text-xs font-semibold uppercase tracking-widest hover:text-primary transition-colors mt-auto text-left flex items-center" data-service="4">
+                        <span data-i18n="btn_read_more">Scopri di più</span>
+                        <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
                 </div>
 
-                <div class="group border border-slate-100 p-8 hover:border-accent/30 hover:shadow-xl transition-all duration-300 rounded-2xl bg-[#F8F9FA]/50">
+                <div class="group border border-slate-100 p-8 hover:border-accent/30 hover:shadow-xl transition-all duration-300 rounded-2xl bg-[#F8F9FA]/50 flex flex-col h-full">
                     <div class="w-12 h-12 flex items-center justify-center bg-white shadow-sm border border-slate-100 rounded-lg mb-6 group-hover:bg-primary transition-colors text-accent">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                     </div>
                     <h3 class="text-lg font-serif text-primary mb-3" data-i18n="srv_5_t">Gestione Crisi d'Impresa</h3>
-                    <p class="text-sm font-light text-slate-600 leading-relaxed" data-i18n="srv_5_d">
+                    <p class="text-sm font-light text-slate-600 leading-relaxed mb-6 flex-grow" data-i18n="srv_5_d">
                         Supporto in situazioni di crisi tramite accordi stragiudiziali, procedure concorsuali e attività di advisor finanziario o esperto negoziatore (artt. 67, 161 e 182 bis L.F.).
                     </p>
+                    <button class="open-service-modal text-accent text-xs font-semibold uppercase tracking-widest hover:text-primary transition-colors mt-auto text-left flex items-center" data-service="5">
+                        <span data-i18n="btn_read_more">Scopri di più</span>
+                        <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
                 </div>
 
-                <div class="group border border-slate-100 p-8 hover:border-accent/30 hover:shadow-xl transition-all duration-300 rounded-2xl bg-[#F8F9FA]/50">
+                <div class="group border border-slate-100 p-8 hover:border-accent/30 hover:shadow-xl transition-all duration-300 rounded-2xl bg-[#F8F9FA]/50 flex flex-col h-full">
                     <div class="w-12 h-12 flex items-center justify-center bg-white shadow-sm border border-slate-100 rounded-lg mb-6 group-hover:bg-primary transition-colors text-accent">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
                     </div>
                     <h3 class="text-lg font-serif text-primary mb-3" data-i18n="srv_6_t">Revisione Contabile</h3>
-                    <p class="text-sm font-light text-slate-600 leading-relaxed" data-i18n="srv_6_d">
+                    <p class="text-sm font-light text-slate-600 leading-relaxed mb-6 flex-grow" data-i18n="srv_6_d">
                         Controllo in ambito di collegi sindacali o revisori dei conti di società di capitali, Enti Pubblici e no profit, con specializzazione nelle PMI del territorio.
                     </p>
+                    <button class="open-service-modal text-accent text-xs font-semibold uppercase tracking-widest hover:text-primary transition-colors mt-auto text-left flex items-center" data-service="6">
+                        <span data-i18n="btn_read_more">Scopri di più</span>
+                        <svg class="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
                 </div>
 
             </div>
@@ -375,7 +392,6 @@
     <section id="location" class="py-24 bg-[#F8F9FA] border-t border-slate-200/60 scroll-mt-10">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-                
                 <div class="lg:col-span-5 space-y-6">
                     <span class="text-xs uppercase tracking-widest text-accent font-semibold block mb-2" data-i18n="loc_tag">La Sede</span>
                     <h2 class="text-3xl font-serif text-primary mb-4" data-i18n="loc_title">Vieni a Trovarci</h2>
@@ -402,7 +418,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
@@ -533,10 +548,9 @@
         </div>
     </footer>
 
-<!-- INTERFACCIA MODALE PRIVACY & COOKIE POLICY UFFICIALE -->
+    <!-- INTERFACCIA MODALE PRIVACY POLICY -->
     <div id="privacy-modal" class="fixed inset-0 bg-primary/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
         <div class="bg-white w-full max-w-3xl max-h-[85vh] flex flex-col overflow-hidden rounded-2xl shadow-2xl">
-            <!-- Header Modal con Tabs -->
             <div class="flex-shrink-0 bg-white border-b border-slate-200 px-8 pt-8">
                 <div class="flex justify-between items-center pb-6">
                     <h3 class="font-serif text-2xl font-semibold text-primary">Info Legali www.euroconsultschio.com</h3>
@@ -548,9 +562,7 @@
                 </div>
             </div>
             
-            <!-- Contenuto Scrollabile -->
             <div class="flex-grow overflow-y-auto p-8 no-scrollbar relative">
-                
                 <!-- PANNELLO PRIVACY -->
                 <div id="panel-privacy" class="text-sm text-slate-600 space-y-5 leading-relaxed font-light">
                     <p data-i18n="priv_intro">Questa Applicazione raccoglie alcuni Dati Personali dei propri Utenti.</p>
@@ -611,12 +623,23 @@
                     <h4 class="font-medium text-primary mt-8" data-i18n="cookie_pol_5">Titolare del Trattamento dei Dati</h4>
                     <p>EUROCONSULT SRL - V. Lago di Lugano 15 - 36015 SCHIO (VI)<br>Email: info@sbalvit.com</p>
                 </div>
-
             </div>
         </div>
     </div>
 
-    
+    <!-- MODALE SERVIZI (Nuovo) -->
+    <div id="service-modal" class="fixed inset-0 bg-primary/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
+        <div class="bg-white w-full max-w-2xl max-h-[80vh] flex flex-col rounded-2xl shadow-2xl overflow-hidden transform scale-95 transition-transform duration-300" id="service-modal-content">
+            <div class="bg-white border-b border-slate-200 p-6 flex justify-between items-center z-10 sticky top-0">
+                <h3 id="service-modal-title" class="font-serif text-xl md:text-2xl font-semibold text-primary">Titolo Servizio</h3>
+                <button id="close-service-modal" class="text-slate-400 hover:text-primary text-3xl font-light leading-none ml-4">&times;</button>
+            </div>
+            <div class="p-6 md:p-8 overflow-y-auto no-scrollbar">
+                <p id="service-modal-text" class="text-sm text-slate-600 leading-relaxed font-light whitespace-pre-line">Testo Servizio</p>
+            </div>
+        </div>
+    </div>
+
     <script>
         // ==========================================
         // DIZIONARIO TRADUZIONI JAVASCRIPT
@@ -657,18 +680,25 @@
                 linkedin: "Profilo LinkedIn",
                 srv_tag: "Aree di Intervento",
                 srv_title: "I Nostri Servizi",
+                btn_read_more: "Scopri di più",
                 srv_1_t: "Consulenza Societaria",
                 srv_1_d: "Assistiamo i clienti negli adempimenti fiscali e civilistici, elaborazione contabilità, scelte aziendali strategiche e passaggio generazionale per la salvaguardia del patrimonio.",
+                srv_1_full: "Lo Studio assiste i clienti nell’espletare i vari adempimenti fiscali e civilistici. Elaboriamo la contabilità di professionisti e imprese con professionalità e diligenza, sostenendo i clienti nell’assumere le decisioni aziendali e strategiche.\n\nSiamo al fianco dell’imprenditore nell’individuazione e realizzazione delle più valide soluzioni riguardanti il tipo di progetto e società, la formazione della compagine societaria, il suo funzionamento, il ruolo delle varie figure e la forma di gestione e di controllo più idonea. I nostri specialisti, particolarmente attenti e preparati anche in quello che riguarda il passaggio generazionale delle imprese, sono di sostegno all’imprenditore nella realizzazione delle soluzioni più efficaci per la gestione e la salvaguardia del patrimonio di riferimento.",
                 srv_2_t: "Pianificazione e Contenzioso",
                 srv_2_d: "Analisi dei vantaggi fiscali tramite aggiornamento normativo continuo. Assistenza preventiva e gestione del contenzioso tributario per la risoluzione ottimale delle controversie.",
+                srv_2_full: "Il continuo aggiornamento in materia fiscale ci permette di essere sempre in linea con le novità introdotte dal legislatore, anche per eseguire l’analisi dei vantaggi fiscali per i nostri clienti. Il nostro Studio assicura una piena ed efficace assistenza nelle diverse fasi del rapporto tra il contribuente e lo Stato, per prevenire l’insorgere di potenziali controversie come anche per la gestione e la migliore soluzione delle stesse.\n\nFacciamo in modo di prevenire ipotesi di contrasto con l’amministrazione finanziaria. Lo Studio assiste i clienti nelle diverse fasi del contenzioso tributario promuovendo e gestendo, laddove questo sia possibile, gli strumenti rivolti a raggiungere un preventivo accordo, fino alla fase del contenzioso, se non altrimenti definito.",
                 srv_3_t: "Controllo di Gestione",
                 srv_3_d: "Elaborazione di strumenti di controllo efficaci, ottimizzazione della gestione finanziaria, redazione di piani di tesoreria, business plan e contabilità analitica.",
+                srv_3_full: "Le competenze esperte acquisite consentono ai professionisti dello Studio di proporre e di elaborare strumenti di controllo, semplici ed efficaci, capaci di essere gestiti direttamente dal cliente e rivolti alla conoscenza delle variabili attraverso le quali si sviluppa l’attività dell’azienda.\n\nStrumenti e modalità operative altrettanto valide ed efficaci sono proposte con il fine di coadiuvare l’azienda nell’ottimizzazione della propria gestione finanziaria e nelle relazioni con gli enti finanziatori. Supportiamo inoltre i clienti nell’implementazione e nel monitoraggio di strumenti di pianificazione e controllo, come i piani di tesoreria, i business plan e la contabilità analitica.",
                 srv_4_t: "Operazioni Straordinarie",
                 srv_4_d: "Riorganizzazioni aziendali, ristrutturazioni di gruppi societari (anche esteri), valutazioni d'azienda e stime del valore economico di asset e capitale.",
+                srv_4_full: "Lo Studio assiste le aziende in molte operazioni straordinarie, tra le quali ci sono le riorganizzazioni aziendali e le ristrutturazioni di piccoli gruppi societari, anche laddove presenti società estere. Progettiamo assieme ai clienti il modo migliore di pianificare e articolare le proprie organizzazioni societarie per poter avere il massimo dalle opportunità del mercato e normative, raggiungendo efficienza produttiva, risparmi legittimi di imposte, risparmio di costi, e così il successo imprenditoriale.\n\nCon le operazioni straordinarie il nostro Studio redige valutazioni d’azienda e stime del valore economico dei suoi asset o del suo capitale, sia volontarie sia obbligatorie per legge, e coordina l’intervento di altri professionisti e l’assistenza notarile.",
                 srv_5_t: "Gestione Crisi d'Impresa",
                 srv_5_d: "Supporto in situazioni di crisi tramite accordi stragiudiziali, procedure concorsuali e attività di advisor finanziario o esperto negoziatore (artt. 67, 161 e 182 bis L.F.).",
+                srv_5_full: "Lo Studio affianca l’imprenditore, laddove possibile, nelle situazioni aziendali in crisi, operando con strumenti riconducibili ad accordi stragiudiziali, o ricorrendo alla richiesta di procedure concorsuali capaci di consolidare il debito anche a vantaggio della continuità aziendale.\n\nI Professionisti del nostro Studio svolgono l’attività di supporto al fianco dell’imprenditore in crisi che accede ad una procedura concorsuale o stragiudiziale o di esperto per le attestazioni richieste degli artt. 67, 161 e 182 bis Legge Fallimentare. Nello specifico, lo Studio si attiva in qualità di advisor finanziario nella predisposizione del piano e degli accordi connessi, nella gestione delle trattative con il ceto creditorio, nella predisposizione delle attestazioni previste dalla Legge in qualità di esperto, oltre che in qualità di esperto negoziatore.",
                 srv_6_t: "Revisione Contabile",
                 srv_6_d: "Controllo in ambito di collegi sindacali o revisori dei conti di società di capitali, Enti Pubblici e no profit, con specializzazione nelle PMI del territorio.",
+                srv_6_full: "I professionisti dello Studio di Schio, Vicenza, iscritti nel registro dei Revisori Legali in applicazione del Decreto Legislativo 39/2010, esercitano la funzione di controllo anche nell’ambito di collegi sindacali o di collegi dei revisori di conti di società di capitali, di Enti Pubblici, e di entri non-profit.\n\nI nostri specialisti hanno maturato esperienze avanzate nel settore della revisione contabile sia di società e soggetti con scopo di lucro, sia nell’ambito degli Enti Locali e sia in quello dei soggetti no profit. Il nostro Studio si è specializzato in particolare nella revisione e controllo di soggetti di piccole dimensioni del territorio.",
                 loc_tag: "La Sede",
                 loc_title: "Vieni a Trovarci",
                 loc_p1: "I nostri uffici si trovano a <strong>Schio (VI)</strong>, in posizione strategica e comodamente raggiungibile, per poter affiancare da vicino le imprese di tutto il territorio vicentino.",
@@ -694,6 +724,27 @@
                 form_priv_1: "Dichiaro di aver letto l'informativa GDPR. Accetto il trattamento dei dati personali.",
                 footer_hq: "Sede Legale:",
                 footer_rights: "Tutti i diritti riservati.",
+                tab_privacy: "Privacy Policy",
+                tab_cookie: "Cookie Policy",
+                priv_intro: "Questa Applicazione raccoglie alcuni Dati Personali dei propri Utenti.",
+                priv_1: "Titolare del Trattamento dei Dati",
+                priv_1_t: "EUROCONSULT SRL<br>V. Lago di Lugano 15 - 36015 SCHIO (VI)<br>Indirizzo email del Titolare: info@sbalvit.com",
+                priv_2: "Tipologie di Dati raccolti",
+                priv_2_t: "Fra i Dati Personali raccolti da questa Applicazione ci sono: nome, azienda, numero di telefono, email (forniti volontariamente tramite il modulo di contatto) e Dati di utilizzo (raccolti automaticamente da servizi terzi come Google Maps e Google Fonts).<br><br>Se non diversamente specificato, tutti i Dati richiesti dal modulo di contatto sono obbligatori per poter fornire una risposta. L'Utente si assume la responsabilità dei Dati Personali di terzi condivisi mediante questa Applicazione.",
+                priv_3: "Modalità e luogo del trattamento",
+                priv_3_t: "<strong>Modalità di trattamento:</strong> Il Titolare adotta le opportune misure di sicurezza volte ad impedire l’accesso, la divulgazione o la modifica non autorizzate dei Dati Personali. Il trattamento viene effettuato mediante strumenti informatici. Oltre al Titolare, potrebbero avere accesso ai Dati soggetti esterni (come fornitori di servizi tecnici e hosting provider) nominati Responsabili del Trattamento.<br><br><strong>Luogo:</strong> I Dati sono trattati presso le sedi operative del Titolare.<br><br><strong>Periodo di conservazione:</strong> I Dati Personali sono trattati e conservati per il tempo richiesto per evadere la richiesta dell'utente o per obblighi di legge.",
+                priv_4: "Finalità del Trattamento",
+                priv_4_t: "I Dati dell’Utente sono raccolti per consentire al Titolare di fornire il Servizio, adempiere agli obblighi di legge, rispondere a richieste o azioni esecutive, tutelare i propri diritti ed interessi (o quelli di Utenti o di terze parti), individuare eventuali attività dolose o fraudolente.",
+                priv_5: "Diritti dell’Utente (GDPR)",
+                priv_5_t: "<li>revocare il consenso in ogni momento;</li><li>opporsi al trattamento dei propri Dati;</li><li>accedere ai propri Dati, richiederne l'aggiornamento, la rettifica o la cancellazione;</li><li>ottenere la limitazione del trattamento;</li><li>ricevere i propri Dati in formato strutturato (portabilità);</li><li>proporre reclamo all'autorità di controllo competente.</li>",
+                cookie_pol_intro: "I Cookie e gli strumenti di tracciamento affini consistono in porzioni di codice installate all'interno del browser che assistono il Titolare nell'erogazione del Servizio.",
+                cookie_pol_1: "Cookie tecnici e salvataggio preferenze",
+                cookie_pol_1_t: "<strong>Attività strettamente necessarie:</strong> Questa Applicazione utilizza un dato tecnico (salvato nel Local Storage del browser denominato <code>cookie-consent-studio</code>) esclusivamente per ricordare la scelta dell'Utente in merito all'accettazione dei cookie di profilazione terze parti. Questo strumento non profila l'utente ed è essenziale per non riproporre il banner ad ogni visita.",
+                cookie_pol_2: "Cookie di terze parti",
+                cookie_pol_2_t: "Questa applicazione <strong>NON</strong> utilizza tracker pubblicitari (come Pixel di Meta o Google Analytics). L'unico servizio terzo che potrebbe rilasciare cookie è Google Maps (attivato solo con consenso preventivo).",
+                cookie_pol_4: "Gestione preferenze sui Cookie",
+                cookie_pol_4_t: "L'Utente può gestire le preferenze relative ai Cookie direttamente all'interno delle impostazioni del proprio browser. Tramite il browser è possibile eliminare i dati salvati in passato, svuotare la cache e revocare eventuali consensi concessi a questo sito.",
+                cookie_pol_5: "Titolare del Trattamento",
                 form_btn_valid: "Invia Richiesta di Consulenza",
                 form_btn_empty: "Compila i campi per inviare",
                 form_btn_priv: "Accetta la Privacy per Inviare"
@@ -733,18 +784,25 @@
                 linkedin: "LinkedIn Profile",
                 srv_tag: "Practice Areas",
                 srv_title: "Our Services",
+                btn_read_more: "Read more",
                 srv_1_t: "Corporate Consulting",
                 srv_1_d: "We assist clients with tax and civil compliance, accounting processing, strategic business choices, and generational transitions for wealth protection.",
+                srv_1_full: "The Firm assists clients in fulfilling various tax and civil obligations. We process the accounting of professionals and businesses with professionalism and diligence, supporting clients in making corporate and strategic decisions.\n\nWe are at the entrepreneur's side in identifying and implementing the most valid solutions regarding the type of project and company, the formation of the corporate structure, its functioning, the role of the various figures, and the most suitable form of management and control. Our specialists, particularly attentive and prepared also in what concerns the generational transition of businesses, support the entrepreneur in the realization of the most effective solutions for the management and safeguarding of the reference assets.",
                 srv_2_t: "Tax Planning and Litigation",
                 srv_2_d: "Analysis of tax advantages through continuous regulatory updates. Preventive assistance and management of tax litigation for optimal dispute resolution.",
+                srv_2_full: "Continuous updating in tax matters allows us to always be in line with the innovations introduced by the legislator, also to perform the analysis of tax advantages for our clients. Our Firm ensures full and effective assistance in the various phases of the relationship between the taxpayer and the State, to prevent the onset of potential disputes as well as for their management and best resolution.\n\nWe make sure to prevent hypotheses of conflict with the tax administration. The Firm assists clients in the various phases of tax litigation, promoting and managing, where possible, the tools aimed at reaching a preventive agreement, up to the litigation phase, if not otherwise defined.",
                 srv_3_t: "Management Control",
                 srv_3_d: "Development of effective control tools, financial management optimization, drafting of treasury plans, business plans, and analytical accounting.",
+                srv_3_full: "The expert skills acquired allow the Firm's professionals to propose and develop simple and effective control tools, capable of being managed directly by the client and aimed at the knowledge of the variables through which the company's activity develops.\n\nEqually valid and effective tools and operating methods are proposed with the aim of assisting the company in optimizing its financial management and in relations with lending institutions. We also support clients in the implementation and monitoring of planning and control tools, such as treasury plans, business plans, and analytical accounting.",
                 srv_4_t: "Extraordinary Operations",
                 srv_4_d: "Corporate reorganizations, restructuring of corporate groups (including foreign), company valuations, and economic value estimates of assets and capital.",
+                srv_4_full: "The Firm assists companies in many extraordinary operations, among which are corporate reorganizations and the restructuring of small corporate groups, even where foreign companies are present. Together with clients, we design the best way to plan and articulate their corporate organizations in order to get the most out of market and regulatory opportunities, achieving production efficiency, legitimate tax savings, cost savings, and thus entrepreneurial success.\n\nWith extraordinary operations, our Firm draws up company valuations and estimates of the economic value of its assets or capital, both voluntary and required by law, and coordinates the intervention of other professionals and notarial assistance.",
                 srv_5_t: "Corporate Crisis Management",
                 srv_5_d: "Support in crisis situations through out-of-court agreements, insolvency procedures, and activities as financial advisor or expert negotiator.",
+                srv_5_full: "The Firm supports the entrepreneur, where possible, in business crisis situations, operating with tools attributable to out-of-court agreements, or resorting to requests for insolvency procedures capable of consolidating the debt also to the advantage of business continuity.\n\nThe Professionals of our Firm carry out support activities alongside the entrepreneur in crisis who accesses an insolvency or out-of-court procedure or as an expert for the certifications required by articles 67, 161, and 182 bis of the Bankruptcy Law. Specifically, the Firm acts as a financial advisor in the preparation of the plan and related agreements, in the management of negotiations with the creditors, in the preparation of the certifications required by law as an expert, as well as an expert negotiator.",
                 srv_6_t: "Statutory Auditing",
                 srv_6_d: "Auditing within boards of statutory auditors or auditors of joint-stock companies, public entities, and non-profits, specializing in local SMEs.",
+                srv_6_full: "The professionals of the Firm in Schio, Vicenza, registered in the Register of Statutory Auditors in application of Legislative Decree 39/2010, exercise the control function also within boards of statutory auditors or boards of auditors of joint-stock companies, Public Entities, and non-profit entities.\n\nOur specialists have gained advanced experience in the field of statutory auditing both of companies and for-profit entities, as well as within Local Authorities and non-profit entities. Our Firm has specialized in particular in the auditing and control of small entities in the area.",
                 loc_tag: "Headquarters",
                 loc_title: "Come Visit Us",
                 loc_p1: "Our offices are located in <strong>Schio (VI)</strong>, in a strategic and easily accessible position, to closely support businesses throughout the Vicenza area.",
@@ -770,6 +828,28 @@
                 form_priv_1: "I declare that I have read the GDPR policy. I accept the processing of personal data.",
                 footer_hq: "Registered Office:",
                 footer_rights: "All rights reserved.",
+                
+                tab_privacy: "Privacy Policy",
+                tab_cookie: "Cookie Policy",
+                priv_intro: "This Application collects some Personal Data from its Users.",
+                priv_1: "Data Controller",
+                priv_1_t: "EUROCONSULT SRL<br>V. Lago di Lugano 15 - 36015 SCHIO (VI)<br>Owner contact email: info@sbalvit.com",
+                priv_2: "Types of Data collected",
+                priv_2_t: "Among the types of Personal Data that this Application collects there are: name, company, phone number, email (provided via contact form) and Usage Data (collected automatically).<br><br>Personal Data may be freely provided by the User, or collected automatically when using this Application. Unless specified otherwise, all Data requested by the contact form is mandatory.",
+                priv_3: "Mode and place of processing",
+                priv_3_t: "<strong>Methods of processing:</strong> The Owner takes appropriate security measures to prevent unauthorized access, disclosure or modification of the Data.<br><br><strong>Place:</strong> The Data is processed at the Owner's operating offices.<br><br><strong>Retention time:</strong> Personal Data shall be processed and stored for as long as required by the purpose they have been collected for.",
+                priv_4: "The purposes of processing",
+                priv_4_t: "The Data concerning the User is collected to allow the Owner to provide its Service, comply with its legal obligations, respond to enforcement requests, protect its rights and interests.",
+                priv_5: "The rights of Users (GDPR)",
+                priv_5_t: "<li>withdraw their consent at any time;</li><li>object to processing of their Data;</li><li>access their Data and seek rectification;</li><li>restrict the processing of their Data;</li><li>have their Personal Data deleted;</li><li>receive their Data and have it transferred;</li><li>lodge a complaint with the supervisory authority.</li>",
+                cookie_pol_intro: "Cookies consist of portions of code installed in the browser that assist the Owner in providing the Service according to the purposes described.",
+                cookie_pol_1: "Technical Cookies and aggregated statistics",
+                cookie_pol_1_t: "<strong>Activities strictly necessary for the operation:</strong> This Application uses a technical token (Local Storage called <code>cookie-consent-studio</code>) to save the User's session regarding the consent for third-party tracking.",
+                cookie_pol_2: "Third-party Cookies",
+                cookie_pol_2_t: "This application does <strong>NOT</strong> use advertising trackers (like Meta Pixel or Google Analytics). The only third-party service that could release cookies is Google Maps (activated only upon user consent).",
+                cookie_pol_4: "How to manage Cookies",
+                cookie_pol_4_t: "The User can manage preferences for Cookies directly from within their own browser settings. Through browser preferences, it is also possible to delete Cookies installed in the past.",
+                cookie_pol_5: "Data Controller",
                 form_btn_valid: "Send Consulting Request",
                 form_btn_empty: "Fill in fields to send",
                 form_btn_priv: "Accept Privacy to Send"
@@ -785,8 +865,74 @@
                     el.innerHTML = translations[lang][key];
                 }
             });
-            checkFormValidity();
         }
+
+        // --- Modale SERVIZI (Testo Completo Dinamico) ---
+        const serviceModal = document.getElementById('service-modal');
+        const serviceModalContent = document.getElementById('service-modal-content');
+        const serviceModalTitle = document.getElementById('service-modal-title');
+        const serviceModalText = document.getElementById('service-modal-text');
+
+        // Apri modale servizio e carica i testi corrispondenti
+        document.querySelectorAll('.open-service-modal').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const serviceId = btn.getAttribute('data-service');
+                
+                serviceModalTitle.innerHTML = translations[currentLang][`srv_${serviceId}_t`];
+                serviceModalText.innerHTML = translations[currentLang][`srv_${serviceId}_full`];
+
+                serviceModal.classList.remove('opacity-0', 'pointer-events-none');
+                serviceModalContent.classList.remove('scale-95');
+                serviceModalContent.classList.add('scale-100');
+            });
+        });
+
+        // Chiudi modale servizio
+        document.getElementById('close-service-modal').addEventListener('click', () => {
+            serviceModal.classList.add('opacity-0', 'pointer-events-none');
+            serviceModalContent.classList.remove('scale-100');
+            serviceModalContent.classList.add('scale-95');
+        });
+
+        // Chiudi cliccando fuori
+        serviceModal.addEventListener('click', (e) => {
+            if (e.target === serviceModal) {
+                document.getElementById('close-service-modal').click();
+            }
+        });
+
+
+        // --- Modale PRIVACY & COOKIE ---
+        const privacyModal = document.getElementById('privacy-modal');
+        const tabPrivacy = document.getElementById('tab-privacy');
+        const tabCookie = document.getElementById('tab-cookie');
+        const panelPrivacy = document.getElementById('panel-privacy');
+        const panelCookie = document.getElementById('panel-cookie');
+
+        function togglePrivacyModal(e) {
+            if(e) e.preventDefault();
+            if(privacyModal.classList.contains('opacity-0')) {
+                privacyModal.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                privacyModal.classList.add('opacity-0', 'pointer-events-none');
+            }
+        }
+
+        ['open-privacy-link', 'open-privacy-cookie', 'footer-privacy-btn', 'close-privacy'].forEach(id => {
+            const el = document.getElementById(id);
+            if(el) el.addEventListener('click', togglePrivacyModal);
+        });
+
+        tabPrivacy.addEventListener('click', () => {
+            tabPrivacy.classList.add('active'); tabCookie.classList.remove('active');
+            panelPrivacy.classList.remove('hidden'); panelCookie.classList.add('hidden');
+        });
+        tabCookie.addEventListener('click', () => {
+            tabCookie.classList.add('active'); tabPrivacy.classList.remove('active');
+            panelCookie.classList.remove('hidden'); panelPrivacy.classList.add('hidden');
+        });
+
 
         // --- SCRIPT THREE.JS ---
         function initThreeJS() {
@@ -829,6 +975,7 @@
         }
         window.addEventListener('DOMContentLoaded', initThreeJS);
 
+
         // --- CHIUSURA CARD TEAM SU SCROLL O TAP ESTERNO ---
         window.addEventListener('scroll', () => {
             if (document.activeElement && document.activeElement.closest('#team .group')) {
@@ -841,6 +988,7 @@
                 document.querySelectorAll('#team .group').forEach(card => card.blur());
             }
         });
+
 
         // --- Menu Mobile ---
         const menuBtn = document.getElementById('menu-btn');
@@ -862,6 +1010,7 @@
         }
         menuBtn.addEventListener('click', toggleMenu);
         document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', toggleMenu));
+
 
         // --- Toggle Lingua ---
         const langToggles = document.querySelectorAll('.lang-toggle');
@@ -894,6 +1043,7 @@
             });
         });
 
+
         // --- Validazione Form ---
         const privacyCheck = document.getElementById('privacy-check');
         const submitBtn = document.getElementById('submit-btn');
@@ -901,7 +1051,6 @@
 
         function checkFormValidity() {
             const isFilled = nameInput.value.trim() !== '' && emailInput.value.trim() !== '' && phoneInput.value.trim() !== '';
-            
             if (privacyCheck.checked && isFilled) {
                 submitBtn.disabled = false;
                 submitBtn.className = "w-full bg-primary text-white text-xs uppercase tracking-widest font-semibold py-4 rounded-lg hover:bg-accent hover:shadow-lg transition-all duration-300";
@@ -909,7 +1058,6 @@
             } else {
                 submitBtn.disabled = true;
                 submitBtn.className = "w-full bg-slate-300 text-slate-500 text-xs uppercase tracking-widest font-semibold py-4 rounded-lg cursor-not-allowed transition-all duration-300 disabled:shadow-none";
-                
                 if (!isFilled) {
                     submitBtn.innerText = translations[currentLang].form_btn_empty;
                 } else {
@@ -919,21 +1067,8 @@
         }
         [privacyCheck, nameInput, emailInput, phoneInput].forEach(el => el.addEventListener('input', checkFormValidity));
 
-        // --- Modale Privacy & Cookie ---
-        const privacyModal = document.getElementById('privacy-modal');
-        function togglePrivacyModal(e) {
-            if(e) e.preventDefault();
-            if(privacyModal.classList.contains('opacity-0')) {
-                privacyModal.classList.remove('opacity-0', 'pointer-events-none');
-            } else {
-                privacyModal.classList.add('opacity-0', 'pointer-events-none');
-            }
-        }
-        ['open-privacy-link', 'open-privacy-cookie', 'footer-privacy-btn', 'close-privacy'].forEach(id => {
-            const el = document.getElementById(id);
-            if(el) el.addEventListener('click', togglePrivacyModal);
-        });
 
+        // --- Cookie & Mappe ---
         const banner = document.getElementById('cookie-banner');
         function loadInteractiveMap() {
             const mapContainer = document.getElementById('map-container');
