@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Studio di Consulenza d'Impresa | Commercialisti e Revisori Legali - Schio</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Euroconsult | Commercialisti e Revisori Legali - Schio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Three.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -28,7 +28,7 @@
 </head>
 <body class="text-slate-700 antialiased selection:bg-slate-300">
 
-    <!-- COOKIE BANNER NORMATIVA GDPR -->
+    <!-- COOKIE BANNER -->
     <div id="cookie-banner" class="fixed bottom-6 left-6 right-6 md:max-w-xl bg-white/95 backdrop-blur-md border border-slate-200 shadow-2xl p-6 z-50 rounded-2xl transition-all duration-500 transform translate-y-20 opacity-0 hidden">
         <div class="space-y-4">
             <h4 class="font-serif text-lg font-semibold text-primary" data-i18n="cookie_title">Informativa sui Cookie</h4>
@@ -45,6 +45,8 @@
     <!-- NAVBAR -->
     <header class="fixed top-0 left-0 right-0 z-50 bg-[#F8F9FA]/85 backdrop-blur-md border-b border-slate-200/60 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            
+            <!-- Logo Fisso (Senza data-i18n per evitare la traduzione) -->
             <a href="#hero" class="text-base md:text-lg font-serif font-semibold tracking-wider uppercase text-primary hover:text-accent transition-colors">
                 Euroconsult
             </a>
@@ -139,7 +141,7 @@
                 <h2 class="text-3xl md:text-4xl font-serif text-primary leading-tight" data-i18n="about_title">Molto più di un semplice supporto contabile</h2>
                 <div class="w-12 h-[2px] bg-accent mt-4 mb-6"></div>
                 <p class="text-slate-600 font-light leading-relaxed" data-i18n="about_p1">
-                    <strong>Studio di Consulenza d’Impresa</strong> si distingue per un approccio moderno e dinamico. Oltre alla tradizionale assistenza amministrativa e fiscale, ci posizioniamo come veri e propri alleati per gli imprenditori del vicentino, aiutandoli a navigare un mercato in continua evoluzione.
+                    <strong>Euroconsult</strong> si distingue per un approccio moderno e dinamico. Oltre alla tradizionale assistenza amministrativa e fiscale, ci posizioniamo come veri e propri alleati per gli imprenditori del vicentino, aiutandoli a navigare un mercato in continua evoluzione.
                 </p>
                 <p class="text-slate-600 font-light leading-relaxed" data-i18n="about_p2">
                     Crediamo fortemente nella pianificazione e nell'ottimizzazione preventiva: non ci limitiamo a registrare i dati del passato, ma forniamo strumenti e analisi per costruire un futuro aziendale solido.
@@ -174,15 +176,16 @@
             </div>
 
             <div class="flex flex-wrap justify-center gap-8">
+                
                 <!-- CARD 1 -->
-                <div class="group relative h-[420px] w-full max-w-[300px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer bg-white">
-                    <img src="foto/sbalchiero.jpg" alt="Dott. Luigino Sbalchiero" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                <div tabindex="0" onclick="" style="-webkit-tap-highlight-color: transparent;" class="group relative h-[420px] w-full max-w-[300px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer bg-white outline-none">
+                    <img src="foto/sbalchiero.jpg" alt="Dott. Luigino Sbalchiero" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105 group-focus:scale-105" />
                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/90 to-transparent p-6 pt-32 flex flex-col justify-end z-10 transition-all duration-500">
                         <h3 class="font-serif text-[18px] font-semibold text-white leading-tight mb-1">Dott. Luigino Sbalchiero</h3>
                         <span class="text-[10px] uppercase tracking-widest font-semibold text-accent" data-i18n="role_comm">Commercialista</span>
-                        <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+                        <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                             <div class="overflow-hidden">
-                                <div class="pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                <div class="pt-4 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-500 delay-100">
                                     <div class="w-8 h-[1px] bg-white/30 mb-3"></div>
                                     <p class="text-[12px] text-slate-200 font-light leading-relaxed mb-4" data-i18n="bio_1">
                                         Fondatore dello studio. Specializzato in operazioni societarie straordinarie, pianificazione fiscale e consulenza strategica per PMI e gruppi.
@@ -198,14 +201,14 @@
                 </div>
 
                 <!-- CARD 2 -->
-                <div class="group relative h-[420px] w-full max-w-[300px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer bg-white">
-                    <img src="foto/vitella.jpg" alt="Dott. Alberto Vitella" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                <div tabindex="0" onclick="" style="-webkit-tap-highlight-color: transparent;" class="group relative h-[420px] w-full max-w-[300px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer bg-white outline-none">
+                    <img src="foto/vitella.jpg" alt="Dott. Alberto Vitella" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105 group-focus:scale-105" />
                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/90 to-transparent p-6 pt-32 flex flex-col justify-end z-10 transition-all duration-500">
                         <h3 class="font-serif text-[18px] font-semibold text-white leading-tight mb-1">Dott. Alberto Vitella</h3>
                         <span class="text-[10px] uppercase tracking-widest font-semibold text-accent" data-i18n="role_rev">Revisore Legale</span>
-                        <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+                        <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                             <div class="overflow-hidden">
-                                <div class="pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                <div class="pt-4 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-500 delay-100">
                                     <div class="w-8 h-[1px] bg-white/30 mb-3"></div>
                                     <p class="text-[12px] text-slate-200 font-light leading-relaxed mb-4" data-i18n="bio_2">
                                         Partner esperto in revisione legale, controllo di gestione aziendale, contenzioso tributario e salvaguardia del patrimonio societario.
@@ -221,14 +224,14 @@
                 </div>
 
                 <!-- CARD 3 -->
-                <div class="group relative h-[420px] w-full max-w-[300px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer bg-white">
-                    <img src="foto/mariaSbalchiero.jpg" alt="Dott.ssa Maria Lucia Sbalchiero" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                <div tabindex="0" onclick="" style="-webkit-tap-highlight-color: transparent;" class="group relative h-[420px] w-full max-w-[300px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer bg-white outline-none">
+                    <img src="foto/mariaSbalchiero.jpg" alt="Dott.ssa Maria Lucia Sbalchiero" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105 group-focus:scale-105" />
                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/90 to-transparent p-6 pt-32 flex flex-col justify-end z-10 transition-all duration-500">
                         <h3 class="font-serif text-[18px] font-semibold text-white leading-tight mb-1">Dott.ssa M. Lucia Sbalchiero</h3>
                         <span class="text-[10px] uppercase tracking-widest font-semibold text-accent" data-i18n="role_comm">Commercialista</span>
-                        <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+                        <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                             <div class="overflow-hidden">
-                                <div class="pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                <div class="pt-4 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-500 delay-100">
                                     <div class="w-8 h-[1px] bg-white/30 mb-3"></div>
                                     <p class="text-[12px] text-slate-200 font-light leading-relaxed mb-4" data-i18n="bio_3">
                                         Punto di riferimento nella gestione societaria ordinaria. Massima esperienza nella risoluzione puntuale delle tematiche fiscali più articolate.
@@ -244,14 +247,14 @@
                 </div>
 
                 <!-- CARD 4 -->
-                <div class="group relative h-[420px] w-full max-w-[300px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer bg-white">
-                    <img src="foto/deStefani.jpg" alt="Dott.ssa Carla De Stefani" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                <div tabindex="0" onclick="" style="-webkit-tap-highlight-color: transparent;" class="group relative h-[420px] w-full max-w-[300px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer bg-white outline-none">
+                    <img src="foto/deStefani.jpg" alt="Dott.ssa Carla De Stefani" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105 group-focus:scale-105" />
                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/90 to-transparent p-6 pt-32 flex flex-col justify-end z-10 transition-all duration-500">
                         <h3 class="font-serif text-[18px] font-semibold text-white leading-tight mb-1">Dott.ssa Carla De Stefani</h3>
                         <span class="text-[10px] uppercase tracking-widest font-semibold text-accent" data-i18n="role_comm">Commercialista</span>
-                        <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+                        <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                             <div class="overflow-hidden">
-                                <div class="pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                <div class="pt-4 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-500 delay-100">
                                     <div class="w-8 h-[1px] bg-white/30 mb-3"></div>
                                     <p class="text-[12px] text-slate-200 font-light leading-relaxed mb-4" data-i18n="bio_4">
                                         Consulente fiscale dotata di comprovata esperienza in attività di supporto e assistenza ad imprese e professionisti.
@@ -267,14 +270,14 @@
                 </div>
 
                 <!-- CARD 5 -->
-                <div class="group relative h-[420px] w-full max-w-[300px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer bg-white">
-                    <img src="foto/malgarin.jpg" alt="Dott.ssa Anna Malgarin" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105" />
+                <div tabindex="0" onclick="" style="-webkit-tap-highlight-color: transparent;" class="group relative h-[420px] w-full max-w-[300px] rounded-2xl overflow-hidden shadow-lg border border-slate-200 cursor-pointer bg-white outline-none">
+                    <img src="foto/malgarin.jpg" alt="Dott.ssa Anna Malgarin" class="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 group-hover:scale-105 group-focus:scale-105" />
                     <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#0F172A] via-[#0F172A]/90 to-transparent p-6 pt-32 flex flex-col justify-end z-10 transition-all duration-500">
                         <h3 class="font-serif text-[18px] font-semibold text-white leading-tight mb-1">Dott.ssa Anna Malgarin</h3>
                         <span class="text-[10px] uppercase tracking-widest font-semibold text-accent" data-i18n="role_comm">Commercialista</span>
-                        <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] transition-all duration-500 ease-in-out">
+                        <div class="grid grid-rows-[0fr] group-hover:grid-rows-[1fr] group-focus:grid-rows-[1fr] transition-all duration-500 ease-in-out">
                             <div class="overflow-hidden">
-                                <div class="pt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
+                                <div class="pt-4 opacity-0 group-hover:opacity-100 group-focus:opacity-100 transition-opacity duration-500 delay-100">
                                     <div class="w-8 h-[1px] bg-white/30 mb-3"></div>
                                     <p class="text-[12px] text-slate-200 font-light leading-relaxed mb-4" data-i18n="bio_5">
                                         Specializzata in consulenza fiscale per professionisti, elaborazione business plan, start-up innovative e finanza agevolata.
@@ -513,7 +516,7 @@
     <footer class="bg-primary text-slate-400 py-16 text-sm font-light border-t border-slate-800">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
             <div class="space-y-3">
-                <p class="font-serif text-white tracking-widest uppercase text-base" data-i18n="footer_brand">Studio di Consulenza d'Impresa</p>
+                <p class="font-serif text-white tracking-widest uppercase text-base">Euroconsult</p>
                 <p class="text-xs text-slate-400 leading-relaxed">
                     <span data-i18n="footer_hq">Sede Legale:</span> EUROCONSULT SRL<br>
                     V. Lago di Lugano 15 - 36015 SCHIO (VI)<br>
@@ -525,27 +528,95 @@
             
             <div class="flex flex-col items-start md:items-end space-y-3 text-xs">
                 <a href="mailto:info@sbalvit.com" class="hover:text-white transition-colors">info@sbalvit.com</a>
-                <a href="#" id="footer-privacy-btn" class="hover:text-white transition-colors underline pt-2">Privacy & Cookie Policy</a>
+                <a href="#" id="footer-privacy-btn" class="hover:text-white transition-colors underline pt-2">Privacy Policy</a>
             </div>
         </div>
     </footer>
 
-    <!-- INTERFACCIA MODALE PRIVACY POLICY (Traduco solo i titoli per brevità, ma la logica è pronta) -->
+<!-- INTERFACCIA MODALE PRIVACY & COOKIE POLICY UFFICIALE -->
     <div id="privacy-modal" class="fixed inset-0 bg-primary/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-all duration-300">
-        <div class="bg-white w-full max-w-3xl max-h-[80vh] overflow-y-auto p-8 md:p-12 rounded-2xl shadow-2xl space-y-6 no-scrollbar">
-            <div class="flex justify-between items-center border-b border-slate-200 pb-4">
-                <h3 class="font-serif text-2xl font-semibold text-primary">Privacy & Cookie Policy</h3>
-                <button id="close-privacy" class="text-slate-400 hover:text-primary text-2xl font-light">&times;</button>
+        <div class="bg-white w-full max-w-3xl max-h-[85vh] flex flex-col overflow-hidden rounded-2xl shadow-2xl">
+            <!-- Header Modal con Tabs -->
+            <div class="flex-shrink-0 bg-white border-b border-slate-200 px-8 pt-8">
+                <div class="flex justify-between items-center pb-6">
+                    <h3 class="font-serif text-2xl font-semibold text-primary">Info Legali www.euroconsultschio.com</h3>
+                    <button id="close-privacy" class="text-slate-400 hover:text-primary text-2xl font-light leading-none">&times;</button>
+                </div>
+                <div class="flex space-x-6 text-sm">
+                    <button id="tab-privacy" class="tab-btn active pb-3 border-b-2 border-transparent text-slate-500 hover:text-primary transition-colors focus:outline-none" data-i18n="tab_privacy">Privacy Policy</button>
+                    <button id="tab-cookie" class="tab-btn pb-3 border-b-2 border-transparent text-slate-500 hover:text-primary transition-colors focus:outline-none" data-i18n="tab_cookie">Cookie Policy</button>
+                </div>
             </div>
-            <div class="text-sm text-slate-600 space-y-4 leading-relaxed font-light">
-                <p class="font-medium text-primary" data-i18n="priv_1">Titolare del Trattamento dei Dati</p>
-                <p>EUROCONSULT SRL / Studio di Consulenza d'Impresa – V. Lago di Lugano 15, 36015 Schio (VI)</p>
-                <p class="font-medium text-primary mt-4" data-i18n="priv_2">1. Tipologie di Dati raccolti</p>
-                <p>Fra i Dati Personali raccolti... (etc)</p>
+            
+            <!-- Contenuto Scrollabile -->
+            <div class="flex-grow overflow-y-auto p-8 no-scrollbar relative">
+                
+                <!-- PANNELLO PRIVACY -->
+                <div id="panel-privacy" class="text-sm text-slate-600 space-y-5 leading-relaxed font-light">
+                    <p data-i18n="priv_intro">Questa Applicazione raccoglie alcuni Dati Personali dei propri Utenti.</p>
+                    
+                    <h4 class="font-medium text-primary mt-8" data-i18n="priv_1">Titolare del Trattamento dei Dati</h4>
+                    <p data-i18n="priv_1_t">EUROCONSULT SRL<br>V. Lago di Lugano 15 - 36015 SCHIO (VI)<br>Indirizzo email del Titolare: info@sbalvit.com</p>
+                    
+                    <h4 class="font-medium text-primary mt-8" data-i18n="priv_2">Tipologie di Dati raccolti</h4>
+                    <p data-i18n="priv_2_t">Fra i Dati Personali raccolti da questa Applicazione ci sono: nome, azienda, numero di telefono, email (forniti volontariamente tramite il modulo di contatto) e Dati di utilizzo (raccolti automaticamente da servizi terzi come Google Maps e Google Fonts).<br><br>Se non diversamente specificato, tutti i Dati richiesti dal modulo di contatto sono obbligatori per poter fornire una risposta. L'Utente si assume la responsabilità dei Dati Personali di terzi condivisi mediante questa Applicazione.</p>
+                    
+                    <h4 class="font-medium text-primary mt-8" data-i18n="priv_3">Modalità e luogo del trattamento dei Dati raccolti</h4>
+                    <p data-i18n="priv_3_t"><strong>Modalità di trattamento:</strong> Il Titolare adotta le opportune misure di sicurezza volte ad impedire l’accesso, la divulgazione o la modifica non autorizzate dei Dati Personali. Il trattamento viene effettuato mediante strumenti informatici. Oltre al Titolare, potrebbero avere accesso ai Dati soggetti esterni (come fornitori di servizi tecnici e hosting provider) nominati Responsabili del Trattamento.<br><br><strong>Luogo:</strong> I Dati sono trattati presso le sedi operative del Titolare.<br><br><strong>Periodo di conservazione:</strong> I Dati Personali sono trattati e conservati per il tempo richiesto per evadere la richiesta dell'utente o per obblighi di legge.</p>
+                    
+                    <h4 class="font-medium text-primary mt-8" data-i18n="priv_4">Dettagli sul trattamento dei Dati Personali</h4>
+                    <div class="space-y-4">
+                        <div class="bg-slate-50 p-4 rounded-lg">
+                            <h5 class="font-medium text-slate-800">Contattare l'Utente</h5>
+                            <p class="mt-2 text-xs"><strong>Modulo di contatto (Web3Forms):</strong> L’Utente, compilando il modulo, acconsente all'utilizzo dei dati per rispondere alle richieste. Il servizio utilizza l'infrastruttura di Web3Forms per il recapito sicuro dell'email.<br>Dati Personali trattati: nome, telefono, email, area di interesse.</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg">
+                            <h5 class="font-medium text-slate-800">Visualizzazione di contenuti da piattaforme esterne</h5>
+                            <p class="mt-2 text-xs"><strong>Widget Google Maps (Google Ireland Limited):</strong> Servizio di visualizzazione mappe. Soggetto al consenso preventivo dell'Utente.<br>Dati Personali raccolti: Cookie e Dati di utilizzo.<br><br><strong>Google Fonts (Google Ireland Limited):</strong> Servizio per l'integrazione di stili di carattere.<br>Dati Personali raccolti: Dati di utilizzo.</p>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg">
+                            <h5 class="font-medium text-slate-800">Raccolta delle preferenze Cookie</h5>
+                            <p class="mt-2 text-xs">Il sito utilizza la memoria locale del browser (Local Storage) esclusivamente per registrare il consenso o il rifiuto dell'utente in merito all'attivazione della mappa interattiva.</p>
+                        </div>
+                    </div>
+
+                    <h4 class="font-medium text-primary mt-8" data-i18n="priv_5">Diritti dell’Utente (GDPR)</h4>
+                    <ul class="list-disc pl-5 space-y-2" data-i18n="priv_5_t">
+                        <li>revocare il consenso in ogni momento;</li>
+                        <li>opporsi al trattamento dei propri Dati;</li>
+                        <li>accedere ai propri Dati, richiederne l'aggiornamento, la rettifica o la cancellazione;</li>
+                        <li>ottenere la limitazione del trattamento;</li>
+                        <li>ricevere i propri Dati in formato strutturato (portabilità);</li>
+                        <li>proporre reclamo all'autorità di controllo competente.</li>
+                    </ul>
+                </div>
+
+                <!-- PANNELLO COOKIE -->
+                <div id="panel-cookie" class="text-sm text-slate-600 space-y-5 leading-relaxed font-light hidden">
+                    <p data-i18n="cookie_pol_intro">I Cookie e gli strumenti di tracciamento affini consistono in porzioni di codice installate all'interno del browser che assistono il Titolare nell'erogazione del Servizio.</p>
+                    
+                    <h4 class="font-medium text-primary mt-8" data-i18n="cookie_pol_1">Cookie tecnici e salvataggio delle preferenze</h4>
+                    <p data-i18n="cookie_pol_1_t"><strong>Attività strettamente necessarie:</strong> Questa Applicazione utilizza un dato tecnico (salvato nel Local Storage del browser denominato <code>cookie-consent-studio</code>) esclusivamente per ricordare la scelta dell'Utente in merito all'accettazione dei cookie di profilazione terze parti. Questo strumento non profila l'utente ed è essenziale per non riproporre il banner ad ogni visita.</p>
+                    
+                    <h4 class="font-medium text-primary mt-8" data-i18n="cookie_pol_2">Cookie di terze parti</h4>
+                    <p data-i18n="cookie_pol_2_t">Questa applicazione <strong>NON</strong> utilizza tracker pubblicitari (come Pixel di Meta o Google Analytics). L'unico servizio terzo che potrebbe rilasciare cookie è:</p>
+                    <div class="bg-slate-50 p-4 rounded-lg mt-4">
+                        <p class="text-xs"><strong>Widget Google Maps (Google Ireland Limited)</strong><br>
+                        Mappa interattiva ospitata nella sezione "Dove Siamo". Il servizio è bloccato di default tramite un'immagine segnaposto e si attiva (rilasciando eventuali cookie di Google) solo ed esclusivamente dopo che l'Utente ha cliccato su "Accetta" o "Sblocca Mappa".</p>
+                    </div>
+                    
+                    <h4 class="font-medium text-primary mt-8" data-i18n="cookie_pol_4">Come gestire le preferenze sui Cookie</h4>
+                    <p data-i18n="cookie_pol_4_t">L'Utente può gestire le preferenze relative ai Cookie direttamente all'interno delle impostazioni del proprio browser. Tramite il browser è possibile eliminare i dati salvati in passato, svuotare la cache e revocare eventuali consensi concessi a questo sito.</p>
+
+                    <h4 class="font-medium text-primary mt-8" data-i18n="cookie_pol_5">Titolare del Trattamento dei Dati</h4>
+                    <p>EUROCONSULT SRL - V. Lago di Lugano 15 - 36015 SCHIO (VI)<br>Email: info@sbalvit.com</p>
+                </div>
+
             </div>
         </div>
     </div>
 
+    
     <script>
         // ==========================================
         // DIZIONARIO TRADUZIONI JAVASCRIPT
@@ -556,7 +627,6 @@
                 cookie_desc: "Questo sito utilizza cookie tecnici necessari al funzionamento e cookie di terze parti (Google Maps) per mostrarti la mappa interattiva. Consulta la nostra <a href='#' id='open-privacy-cookie' class='underline text-accent hover:text-primary transition-colors'>Privacy Policy</a>.",
                 cookie_reject: "Rifiuta",
                 cookie_accept: "Accetta",
-                nav_brand: "Studio di Consulenza D'Impresa",
                 nav_about: "Chi Siamo",
                 nav_team: "Team",
                 nav_services: "Servizi",
@@ -570,7 +640,7 @@
                 hero_btn2: "Le Nostre Aree",
                 about_tag: "Il Nostro Approccio",
                 about_title: "Molto più di un semplice supporto contabile",
-                about_p1: "<strong>Studio di Consulenza d’Impresa</strong> si distingue per un approccio moderno e dinamico. Oltre alla tradizionale assistenza amministrativa e fiscale, ci posizioniamo come veri e propri alleati per gli imprenditori del vicentino, aiutandoli a navigare un mercato in continua evoluzione.",
+                about_p1: "<strong>Euroconsult</strong> si distingue per un approccio moderno e dinamico. Oltre alla tradizionale assistenza amministrativa e fiscale, ci posizioniamo come veri e propri alleati per gli imprenditori del vicentino, aiutandoli a navigare un mercato in continua evoluzione.",
                 about_p2: "Crediamo fortemente nella pianificazione e nell'ottimizzazione preventiva: non ci limitiamo a registrare i dati del passato, ma forniamo strumenti e analisi per costruire un futuro aziendale solido.",
                 about_quote: "\"Il nostro obiettivo è anticipare le criticità e cogliere le opportunità normative, garantendo agli amministratori la massima tranquillità operativa attraverso soluzioni sartoriali e digitalmente avanzate.\"",
                 about_years: "Anni di Consulenza",
@@ -622,12 +692,8 @@
                 form_opt4: "Controllo di Gestione",
                 form_msg: "Messaggio (Opzionale)",
                 form_priv_1: "Dichiaro di aver letto l'informativa GDPR. Accetto il trattamento dei dati personali.",
-                footer_brand: "Studio di Consulenza d'Impresa",
                 footer_hq: "Sede Legale:",
                 footer_rights: "Tutti i diritti riservati.",
-                priv_1: "Titolare del Trattamento dei Dati",
-                priv_2: "1. Tipologie di Dati raccolti",
-                // Testi dinamici per i bottoni del form
                 form_btn_valid: "Invia Richiesta di Consulenza",
                 form_btn_empty: "Compila i campi per inviare",
                 form_btn_priv: "Accetta la Privacy per Inviare"
@@ -637,7 +703,6 @@
                 cookie_desc: "This site uses essential technical cookies and third-party cookies (Google Maps) to show you the interactive map. Read our <a href='#' id='open-privacy-cookie' class='underline text-accent hover:text-primary transition-colors'>Privacy Policy</a>.",
                 cookie_reject: "Reject",
                 cookie_accept: "Accept",
-                nav_brand: "Business Consulting Firm",
                 nav_about: "About Us",
                 nav_team: "Team",
                 nav_services: "Services",
@@ -651,7 +716,7 @@
                 hero_btn2: "Our Practice Areas",
                 about_tag: "Our Approach",
                 about_title: "Much more than simple accounting support",
-                about_p1: "<strong>Business Consulting Firm</strong> stands out for its modern and dynamic approach. Beyond traditional administrative and tax assistance, we act as true allies for local entrepreneurs, helping them navigate an ever-changing market.",
+                about_p1: "<strong>Euroconsult</strong> stands out for its modern and dynamic approach. Beyond traditional administrative and tax assistance, we act as true allies for local entrepreneurs, helping them navigate an ever-changing market.",
                 about_p2: "We strongly believe in planning and preventive optimization: we don't just record past data, but we provide tools and analyses to build a solid corporate future.",
                 about_quote: "\"Our goal is to anticipate critical issues and seize regulatory opportunities, ensuring maximum operational peace of mind for directors through tailored and digitally advanced solutions.\"",
                 about_years: "Years of Experience",
@@ -703,11 +768,8 @@
                 form_opt4: "Management Control",
                 form_msg: "Message (Optional)",
                 form_priv_1: "I declare that I have read the GDPR policy. I accept the processing of personal data.",
-                footer_brand: "Business Consulting Firm",
                 footer_hq: "Registered Office:",
                 footer_rights: "All rights reserved.",
-                priv_1: "Data Controller",
-                priv_2: "1. Types of Data Collected",
                 form_btn_valid: "Send Consulting Request",
                 form_btn_empty: "Fill in fields to send",
                 form_btn_priv: "Accept Privacy to Send"
@@ -716,7 +778,6 @@
 
         let currentLang = 'it';
 
-        // Funzione per aggiornare tutto il testo
         function updateLanguage(lang) {
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
@@ -724,7 +785,6 @@
                     el.innerHTML = translations[lang][key];
                 }
             });
-            // Forza l'aggiornamento del testo del bottone del form in base allo stato attuale
             checkFormValidity();
         }
 
@@ -743,9 +803,7 @@
             container.appendChild(renderer.domElement);
 
             const geometry = new THREE.IcosahedronGeometry(9, 1);
-            const material = new THREE.MeshBasicMaterial({ 
-                color: 0xA67C52, wireframe: true, transparent: true, opacity: 0.6
-            });
+            const material = new THREE.MeshBasicMaterial({ color: 0xA67C52, wireframe: true, transparent: true, opacity: 0.6 });
             const sphere = new THREE.Mesh(geometry, material);
             scene.add(sphere);
 
@@ -770,6 +828,19 @@
             animate();
         }
         window.addEventListener('DOMContentLoaded', initThreeJS);
+
+        // --- CHIUSURA CARD TEAM SU SCROLL O TAP ESTERNO ---
+        window.addEventListener('scroll', () => {
+            if (document.activeElement && document.activeElement.closest('#team .group')) {
+                document.activeElement.blur();
+            }
+        }, { passive: true });
+        
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('#team .group')) {
+                document.querySelectorAll('#team .group').forEach(card => card.blur());
+            }
+        });
 
         // --- Menu Mobile ---
         const menuBtn = document.getElementById('menu-btn');
@@ -799,17 +870,25 @@
                 if (currentLang === 'it') {
                     currentLang = 'en';
                     document.querySelectorAll('.lang-slider').forEach(el => el.classList.add('translate-x-[32px]'));
-                    document.querySelectorAll('.lang-it').forEach(el => el.classList.replace('font-bold', 'font-medium'));
-                    document.querySelectorAll('.lang-it').forEach(el => el.classList.replace('text-primary', 'text-slate-400'));
-                    document.querySelectorAll('.lang-en').forEach(el => el.classList.replace('font-medium', 'font-bold'));
-                    document.querySelectorAll('.lang-en').forEach(el => el.classList.replace('text-slate-400', 'text-primary'));
+                    document.querySelectorAll('.lang-it').forEach(el => {
+                        el.classList.replace('font-bold', 'font-medium');
+                        el.classList.replace('text-primary', 'text-slate-400');
+                    });
+                    document.querySelectorAll('.lang-en').forEach(el => {
+                        el.classList.replace('font-medium', 'font-bold');
+                        el.classList.replace('text-slate-400', 'text-primary');
+                    });
                 } else {
                     currentLang = 'it';
                     document.querySelectorAll('.lang-slider').forEach(el => el.classList.remove('translate-x-[32px]'));
-                    document.querySelectorAll('.lang-it').forEach(el => el.classList.replace('font-medium', 'font-bold'));
-                    document.querySelectorAll('.lang-it').forEach(el => el.classList.replace('text-slate-400', 'text-primary'));
-                    document.querySelectorAll('.lang-en').forEach(el => el.classList.replace('font-bold', 'font-medium'));
-                    document.querySelectorAll('.lang-en').forEach(el => el.classList.replace('text-primary', 'text-slate-400'));
+                    document.querySelectorAll('.lang-it').forEach(el => {
+                        el.classList.replace('font-medium', 'font-bold');
+                        el.classList.replace('text-slate-400', 'text-primary');
+                    });
+                    document.querySelectorAll('.lang-en').forEach(el => {
+                        el.classList.replace('font-bold', 'font-medium');
+                        el.classList.replace('text-primary', 'text-slate-400');
+                    });
                 }
                 updateLanguage(currentLang);
             });
@@ -844,11 +923,15 @@
         const privacyModal = document.getElementById('privacy-modal');
         function togglePrivacyModal(e) {
             if(e) e.preventDefault();
-            if(privacyModal.classList.contains('opacity-0')) privacyModal.classList.remove('opacity-0', 'pointer-events-none');
-            else privacyModal.classList.add('opacity-0', 'pointer-events-none');
+            if(privacyModal.classList.contains('opacity-0')) {
+                privacyModal.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                privacyModal.classList.add('opacity-0', 'pointer-events-none');
+            }
         }
         ['open-privacy-link', 'open-privacy-cookie', 'footer-privacy-btn', 'close-privacy'].forEach(id => {
-            document.getElementById(id).addEventListener('click', togglePrivacyModal);
+            const el = document.getElementById(id);
+            if(el) el.addEventListener('click', togglePrivacyModal);
         });
 
         const banner = document.getElementById('cookie-banner');
